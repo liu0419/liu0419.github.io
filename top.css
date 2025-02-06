@@ -1,0 +1,66 @@
+ /* 主容器 */
+ .P-container {
+     display: flex;
+     flex-direction: column;
+     /* 水平居中 */
+     height: auto;
+     overflow-x: hidden;
+     /* 防止水平滚动条 */
+     position: relative;
+     /* 為了讓子元素的絕對定位生效 */
+     width: 1440px;
+     /* 假設 container 寬度是 1440px */
+     margin-bottom: 200px;
+ }
+
+ /* 图片容器 */
+ .photo-container {
+     display: flex;
+     /* 使用 Flexbox 排列 */
+     gap: 20px;
+     /* 照片之间的间距 */
+     align-items: center;
+     /* 图片垂直居中 */
+     margin-top: 9px;
+     width: 100%
+ }
+
+ /* 每张照片 */
+ .photo {
+     width: 180px;
+     /* 固定宽度 */
+     height: auto;
+     /* 保持原始高度 */
+     object-fit: cover;
+     /* 保持图片内容 */
+     opacity: 0;
+     /* 初始状态完全透明 */
+     transform: translateY(80px);
+     /* 默认为右偏移 */
+     /* 向右偏移 */
+     animation: fade-in 1.3s ease-out forwards;
+     /* 应用淡入动画 */
+     transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+     /* 平滑过渡效果 */
+ }
+
+ /* 为前 8 张图片应用不同的 transform */
+ .photo:nth-child(-n+8) {
+     transform: translateY(-80px);
+     /* 向左偏移 */
+ }
+
+ /* 关键帧动画（你需要定义这个动画） */
+ @keyframes fade-in {
+     0% {
+         opacity: 0;
+         transform: translateY(-80px);
+         /* 向右偏移 */
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateY(0);
+         /* 正常位置 */
+     }
+ }

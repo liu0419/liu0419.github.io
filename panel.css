@@ -1,0 +1,71 @@
+/* 父容器樣式 */
+.panels-container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    /* 讓子元素垂直排列 */
+    align-items: center;
+    height: 2400px;
+    width: 100%;
+    position: relative;
+    /* 父容器需要相對定位 */
+}
+
+/* 基本的 Panel 樣式 */
+.panel {
+    width: 1216px;
+    height: 600px;
+    background: #fff;
+    border: 2px solid #2BE0EC80;
+    border-radius: 32px;
+    box-shadow: 0px 10px 44px rgba(102, 102, 102, 0.12),
+        inset -3px -3px 10px rgba(84, 92, 101, 0.16),
+        inset -5px -3px 12px rgba(193, 203, 221, 0.16);
+    will-change: transform;
+    transform-style: preserve-3d;
+    position: sticky;
+    /* 固定在容器內的特定位置 */
+    top: 80px;
+    /* 固定的位置距離頂部 */
+    z-index: 1;
+    /* 默認堆疊順序 */
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    /* 添加平滑動畫效果 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+/* Panel 狀態樣式 */
+.panels-container .panel-1 {
+    transform: rotate(-0.5deg);
+}
+
+.panels-container .panel-2 {
+    transform: rotate(1deg);
+}
+
+.panels-container .panel-3 {
+    transform: rotate(-1.5deg);
+}
+
+/* 向上滑動時堆疊效果 */
+.panels-container .panel.stacked {
+    z-index: 10;
+    /* 提高堆疊順序 */
+    /*transform: rotate(0deg); /* 恢復為平整樣式 */
+}
+
+
+.panel-content{
+    position: absolute;
+    padding:48px 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
