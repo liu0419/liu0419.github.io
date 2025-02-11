@@ -11,7 +11,26 @@ document.addEventListener('DOMContentLoaded', function () {
         // 每頁寬度固定為 container 的寬度：1240px
         const offset = currentPage * 1240;
         carouselItems.style.transform = `translateX(-${offset}px)`;
+        updateButtons();
     }
+
+    // 根據 currentPage 更新箭頭按鈕的顯示狀態
+    function updateButtons() {
+        if (currentPage === 0) {
+            prevButton.style.display = 'none';
+        } else {
+            prevButton.style.display = 'block';
+        }
+
+        if (currentPage === totalPages - 1) {
+            nextButton.style.display = 'none';
+        } else {
+            nextButton.style.display = 'block';
+        }
+    }
+
+    // 初始載入時更新按鈕狀態
+    updateButtons();
 
     prevButton.addEventListener('click', function () {
         if (currentPage > 0) {
@@ -25,5 +44,5 @@ document.addEventListener('DOMContentLoaded', function () {
             currentPage++;
             updateCarousel();
         }
-    });
+    })
 });
