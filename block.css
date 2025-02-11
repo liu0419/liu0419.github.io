@@ -1,5 +1,5 @@
  .block {
-    position:relative;
+     position: relative;
      width: 1440px;
      /* 最小寬度對應數值 */
      height: 3313px;
@@ -208,4 +208,19 @@
      background: radial-gradient(100% 256.33% at 0% 7.41%, #64CEDB 0%, #15A6B7 100%);
      z-index: 10;
      box-sizing: border-box
+ }
+
+
+ /* ----------------------------------------------最新消息 */
+ .newsBox {
+     display: flex;
+     gap: 32px;
+     width: fit-content;
+     /* 寬度根據內容調整 */
+     max-width: 100%;
+     /* 避免超出父級元素 */
+     overflow-x: auto;
+     /* 超出部分可滾動 */
+     white-space: nowrap;
+     /* 防止元素換行 */
  }

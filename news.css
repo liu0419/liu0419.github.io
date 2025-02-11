@@ -68,16 +68,26 @@
     margin-left: 12px;
     height: 62px;
     overflow: hidden;
+    display: -webkit-box;       /* 建立多行截斷效果必備 */
+  -webkit-box-orient: vertical; /* 垂直排列子元素 */
+  -webkit-line-clamp: 3;      /* 限制顯示 3 行 */
+  
 }
 
 .newsC {
     font-weight: 300;
     font-size: 12px;
     letter-spacing: 1.2px;
-    height: 12px;
+    height: 14px;
     width: 384px;
     margin-top: 4px;
-    margin-left:8px;
+    margin-left: 8px;
+    white-space: nowrap;
+    /* 禁止換行 */
+    overflow: hidden;
+    /* 隱藏超出部分 */
+    text-overflow: ellipsis;
+    /* 超出部分以省略號顯示 */
 }
 
 /* 箭頭按鈕樣式 */

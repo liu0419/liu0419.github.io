@@ -1,0 +1,124 @@
+.artistC {
+    display: flex;
+    position: relative;
+    width: 1440px;
+    height: 800px;
+    overflow: hidden;
+}
+
+.atirst {
+    transform:scale(0.874) translateY(-60px);
+}
+
+.artistN {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+}
+
+.artistIntro {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
+    margin-top: 12px;
+    width: 922px
+}
+
+/* Carousel 外層容器，固定寬度只顯示 3 個 item 與間距 */
+.paintCarosuel {
+    position: absolute;
+    width: 1240px;
+    height: 453px;
+    overflow: hidden;
+    margin-top: 40px;
+    transform: translateX(100px);
+}
+
+/* 放所有 item 的 track，採用 flex 排列並設定間距 */
+.paintWrap {
+    display: flex;
+    gap: 32px;
+    transition: transform 0.3s ease-in-out;
+    width: auto;
+}
+
+/* 單一 item 的樣式 */
+.paintItem {
+    flex: 0 0 auto;
+    width: 392px;
+    height: 453px;
+    border-radius: 32px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    box-shadow:
+    -5px -3px 12px 0px rgba(193,203,221,0.16) inset,
+    -3px -3px 10px 0px rgba(84,92,101,0.16) inset,
+    0px 5px 44px 0px rgba(169, 168, 168, 0.12)inset ;
+
+}
+
+.paintPhoto {
+    width: 360px;
+    height: 280px;
+    border-radius: 20px;
+    background-color: #F6F7FB;
+    overflow: hidden;
+    /* 隱藏超出容器的部分 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paintPhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* 以完整呈現圖片，不拉伸 */
+}
+
+.paintName {
+    margin-top: 16px;
+    width: 339px;
+    height: auto;
+    font-weight: 700px;
+    font-size: 24px;
+}
+
+.paintDetail {
+    width: 336;
+    height: 53;
+    margin-top: 16px;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* 右側箭頭按鈕 */
+.paintButtom {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    left:66%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background:transparent;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+}
+
+.paintButtom img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 或者 cover，看你要整個圖片顯示還是填滿容器 */
+    border-radius: inherit; /* 如果想讓圖片也有和按鈕一樣的圓角 */
+  }
