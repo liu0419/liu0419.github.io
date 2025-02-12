@@ -1,0 +1,61 @@
+.partnerBar {
+    width: 1239px;
+    height: 88px;
+    gap: 32px;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.partnerBox {
+    width: 222px;
+    height: 88px;
+    min-width: 152px;
+    display: flex;
+    justify-content: center;
+    /* 水平置中 */
+    align-items: center;
+    /* 垂直置中 */
+    /* 讓容器成為參考點 */
+    position: relative;
+}
+
+.partnerBox img {
+    /* 讓圖片不超出容器，同時保持比例 */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.partnerBox .indicator {
+    width: 222px;
+    height: 4px;
+    border-radius: 8px;
+    background-color: #E7EEEC;
+    position: absolute;
+    bottom: 0;
+}
+
+.partnerBox.active .indicator {
+    background-color: #005ca2;
+
+}
+
+.partnerContainer {
+    width: 1240px;
+    height: 312px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    background-color: #f6f7fb;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.partnerContent {
+    display: none;
+}
+
+/* 顯示目前 active 的內容 */
+.partnerContent.active {
+    display: block;
+}
