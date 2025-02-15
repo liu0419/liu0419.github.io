@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長期夥伴關係</title>
+    <style>
+        .partnerBar {
+            width: 1239px;
+            height: 88px;
+            gap: 32px;
+            justify-self: center;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .partnerBox {
+            width: 222px;
+            height: 88px;
+            min-width: 152px;
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            /* 讓容器成為參考點 */
+            position: relative;
+        }
+
+        .partnerBox img {
+            /* 讓圖片不超出容器，同時保持比例 */
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .partnerBox .indicator {
+            width: 222px;
+            height: 4px;
+            border-radius: 8px;
+            background-color: #E7EEEC;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .partnerBox.active .indicator {
+            background-color: #005ca2;
+
+        }
+
+        .partnerContainer {
+            width: 1240px;
+            height: 312px;
+            border-bottom-right-radius: 32px;
+            border-bottom-left-radius: 32px;
+            background-color: #f6f7fb;
+            justify-self: center;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .partnerContent {
+            display: none;
+        }
+
+        /* 顯示目前 active 的內容 */
+        .partnerContent.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bar -->
+    <div class="partnerBar">
+        <div class="partnerBox active" data-tab="1">
+            <img src="/Users/liuchengyan/Downloads/Logo.png">
+            <div class="indicator"></div>
+        </div>
+
+        <div class="partnerBox " data-tab="2">
+            <img src="/Users/liuchengyan/Downloads/Tab.png">
+            <div class="indicator"></div>
+        </div>
+
+        <div class="partnerBox " data-tab="3">
+            <img src="/Users/liuchengyan/Downloads/Logo (1).png">
+            <div class="indicator"></div>
+        </div>
+
+        <div class="partnerBox " data-tab="4">
+            <img src="/Users/liuchengyan/Downloads/Logo (2).png">
+            <div class="indicator"></div>
+        </div>
+
+        <div class="partnerBox " data-tab="5">
+            <img src="/Users/liuchengyan/Downloads/絢彩 1.png">
+            <div class="indicator"></div>
+        </div>
+
+    </div>
+
+    <!-- content -->
+    <div class="partnerContainer">
+        <div class="partnerContent active" data-tab="1">
+            <div>1</div>
+        </div>
+        <div class="partnerContent" data-tab="2">
+            <div>2</div>
+        </div>
+        <div class="partnerContent" data-tab="3">
+            <div>3</div>
+        </div>
+        <div class="partnerContent" data-tab="4">
+            <div>4</div>
+        </div>
+        <div class="partnerContent" data-tab="5">
+            <div>5</div>
+        </div>
+
+    </div>
+
+    <script>
+        // 取得所有 tab 與內容區塊
+        const partners = document.querySelectorAll('.partnerBox');
+        const contents = document.querySelectorAll('.partnerContent');
+
+        // 監聽每個 tab 的點擊事件
+        partners.forEach(partner => {
+            partner.addEventListener('click', () => {
+                // 先移除所有 tab 的 active 狀態
+                partners.forEach(t => t.classList.remove('active'));
+                // 移除所有內容區塊的 active 狀態
+                contents.forEach(c => c.classList.remove('active'));
+
+                // 為點選的 tab 加上 active 狀態
+                partner.classList.add('active');
+                // 根據 tab 上的 data-tab 取得對應內容區塊並顯示
+                const tabId = partner.getAttribute('data-tab');
+                const activeContent = document.querySelector(`.partnerContent[data-tab="${tabId}"]`);
+                activeContent.classList.add('active');
+
+
+            })
+        })
+    </script>
+
+</body>
+
+</html>

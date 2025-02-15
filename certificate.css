@@ -1,0 +1,59 @@
+.certiW {
+    width: 814px;
+    height: auto;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
+    color: #000000;
+    margin: 16.7px auto 0;
+}
+
+.certiBackg {
+    width: 1440px;
+    height: 875px;
+    margin-top: 41px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.certiBackg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.certiBtn {
+    position: absolute;
+    width: 240px;
+    height: 64px;
+    top: 362px;
+    left: 76px;
+    border-radius: 100px;
+    background: radial-gradient(100% 256.33% at 0% 7.41%, #64CEDB 0%, #15A6B7 100%);
+    font-weight: 400;
+    font-size: 20px;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certiContent{
+    width:436px;
+    height:118px;
+    gap:16px;
+    font-weight: 100;
+    font-size: 48px;
+    color:#fdfdfd;
+    position:absolute;
+    left:76px;
+    top:184px;
+}
+
+.certiContent span{
+    font-weight: 100;
+    font-size: 20px;
+    color:#f3f5f6;
+}
