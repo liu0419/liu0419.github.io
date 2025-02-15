@@ -10,8 +10,8 @@
 }
 
 .certiBackg {
-    width: 1440px;
-    height: 875px;
+    width: 100%;
+    height: auto;
     margin-top: 41px;
     overflow: hidden;
     display: flex;
@@ -34,26 +34,58 @@
     background: radial-gradient(100% 256.33% at 0% 7.41%, #64CEDB 0%, #15A6B7 100%);
     font-weight: 400;
     font-size: 20px;
-    color:white;
-    display:flex;
+    color: white;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.certiContent{
-    width:436px;
-    height:118px;
-    gap:16px;
+.certiContent {
+    width: 436px;
+    height: 118px;
+    gap: 16px;
     font-weight: 100;
     font-size: 48px;
-    color:#fdfdfd;
-    position:absolute;
-    left:76px;
-    top:184px;
+    color: #fdfdfd;
+    position: absolute;
+    left: 76px;
+    top: 184px;
 }
 
-.certiContent span{
+.certiContent span {
     font-weight: 100;
     font-size: 20px;
-    color:#f3f5f6;
+    color: #f3f5f6;
+}
+
+.certiRwd {
+    display: none;
+    width: 100%;
+    height: auto;
+    margin-top:16px;
+    justify-self:center;
+
+}
+.certiRwd img{
+    width:100%;
+    height:100%;
+}
+
+@media (max-width: 768px) {
+    .certiW {
+        width: 361px;
+        height: 72px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.8px;
+        margin-top: 4px;
+    }
+
+    .certiBackg {
+        display: none;
+    }
+
+    .certiRwd{
+        display:block;
+    }
 }

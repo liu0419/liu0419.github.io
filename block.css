@@ -12,6 +12,14 @@
      margin-top: 32px;
  }
 
+ @media (max-width: 768px){
+    .block{
+        height:3348px;
+        border-radius:32px;
+    }
+
+ }
+
  /* ----------------------------------------------------------------- */
  .proTeam {
      color: white;

@@ -8,3 +8,15 @@
     color: transparent;
     margin: 0 auto;
 }
+
+@media (max-width: 768px){
+    .topic {
+        font-size: 24px;
+        line-height: 36px;
+        margin-top:56px;
+    }
+    .none{
+        display: none;
+    }
+
+}

@@ -8,8 +8,6 @@
     /* 先將元素的左側放在螢幕中間 */
     transform: translateX(-50%);
     /* 再把整個元素向左移半個自身寬度，使其真正置中 */
-    width: 100%;
-    /* 寬度 */
     height: 64px;
     /* 高度 */
     background: rgba(237, 239, 237, 0.8);

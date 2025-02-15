@@ -12,6 +12,12 @@
     /* 父容器需要相對定位 */
 }
 
+@media (max-width: 768px) {
+    .panels-container {
+        height:auto;
+    }
+}
+
 /* 基本的 Panel 樣式 */
 .panel {
     width: 1216px;
@@ -38,6 +44,23 @@
     padding: 32px;
     box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+    .panel {
+        width: 361px;
+        height: 334px;
+        border-radius: 18px;
+        flex-direction: column;
+        padding: 24px;
+        align-self:center;
+    }
+    .panel-content{
+        display: none !important;
+    }
+
+}
+
+
 
 /* Panel 狀態樣式 */
 .panels-container .panel-1 {
