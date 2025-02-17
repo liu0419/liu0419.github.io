@@ -75,6 +75,7 @@
     flex-direction: row;
     padding: 0 6%;
     box-sizing: border-box;
+    justify-content: center;
 }
 
 .partnerContent {

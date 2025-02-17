@@ -12,6 +12,7 @@
      gap: 9px;
  }
 
+
  /* 图片容器 */
  .photo-container {
      display: flex;
@@ -23,20 +24,13 @@
      width: 100%;
  }
 
-
-
  /* 每张照片 */
  .photo {
      width: 180px;
+     height:100%;
      /* 固定宽度 */
-     height: auto;
-     /* 保持原始高度 */
-     object-fit: cover;
-     /* 保持图片内容 */
      opacity: 0;
      /* 初始状态完全透明 */
-     transform: translateY(80px);
-     /* 默认为右偏移 */
      /* 向右偏移 */
      animation: fade-in 1.3s ease-out forwards;
      /* 应用淡入动画 */
@@ -44,11 +38,86 @@
      /* 平滑过渡效果 */
  }
 
+
+
  /* 为前 8 张图片应用不同的 transform */
  .photo:nth-child(-n+8) {
      transform: translateY(-80px);
      /* 向左偏移 */
  }
+ @media (max-width: 768px) {
+
+    .P-container {
+       justify-content: center;
+        gap: 12px;
+        margin-top:51px;
+    }
+   
+    .photo-container {
+        gap: 8px;
+        justify-content: center;
+        width: 100%;
+    }
+    .photo{
+        width:12%;
+        max-height:78px;
+    }
+ }
+
+
+/* ===== 第一組圖片（第一個 .photo-container） ===== */
+.P-container > .photo-container:first-child .photo:nth-child(1) {
+    animation-delay: 0.7s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(4) {
+    animation-delay: 0.1s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(5) {
+    animation-delay: 0.1s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(7) {
+    animation-delay: 0.5s;
+  }
+  .P-container > .photo-container:first-child .photo:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  
+  /* ===== 第二組圖片（第二個 .photo-container） ===== */
+  .P-container > .photo-container:last-child .photo:nth-child(1) {
+    animation-delay: 0.6s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(4) {
+    animation-delay: 0s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(5) {
+    animation-delay: 0s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(6) {
+    animation-delay: 0.2s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(7) {
+    animation-delay: 0.4s;
+  }
+  .P-container > .photo-container:last-child .photo:nth-child(8) {
+    animation-delay: 0.6s;
+  }
+
+
 
  /* 关键帧动画（你需要定义这个动画） */
  @keyframes fade-in {
@@ -64,6 +133,10 @@
          /* 正常位置 */
      }
  }
+
+
+
+
 
  .logo {
      width: 120px;
