@@ -4,35 +4,53 @@
     width: 1440px;
     height: auto;
     overflow: hidden;
-    margin-bottom:10px;
-    
+    margin-bottom: 10px;
+    justify-content: center;
+
 }
 
-.atirst {
+@media (max-width: 768px) {
+    .artistC {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* .atirst {
     transform: scale(0.874) translateY(-60px);
     transform: translateY(-100px);
-}
+} */
 
-.artistPhoto{
+.artistPhoto {
     height: 673px;
     width: 450px;
     display: flex;
-    justify-content: center; /* 水平置中 */
-    align-items: flex-end;   /* 垂直靠底部 */
-    
+    justify-content: center;
+    /* 水平置中 */
+    align-items: flex-end;
+    /* 垂直靠底部 */
+
 }
 
-.artistPhoto img{
+
+.artistPhoto img {
     max-width: 100%;
     max-height: 100%;
     transform: translateY(-50px);
-   
+
 }
 
-.artistCWord{
-    margin-top:40px;
+.artistCWord {
+    margin-top: 40px;
     position: relative;
-    height:auto;
+    height: auto;
+    gap: 12px;
+}
+
+.shiehLayout{
+    margin-left: 98px;
+    margin-top: 20px;
 }
 
 .artistN {
@@ -41,13 +59,13 @@
     line-height: 35px;
 }
 
-.artistIntroC{
-    margin-top:100px;
-    margin-right:100px;
+/* .artistIntroC {
+    margin-top: 100px;
+    margin-right: 100px;
     height: fit-content;
-    display:flex;
+    display: flex;
     flex-direction: column;
-}
+} */
 
 
 .artistIntro {
@@ -55,9 +73,57 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 1.2px;
-    margin-top: 12px;
     width: 922px
 }
+
+.shiehRwd{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .artistPhoto {
+        height: 216px;
+        width: 178px;
+    }
+
+    .artistPhoto img {
+        transform: unset;
+    }
+
+
+    .artistCWord {
+        display: flex;
+        flex-direction: column;
+        margin-top: unset;
+        margin-bottom:5px;
+        width: 54%;
+        gap: 4px;
+        justify-content: flex-end;
+        margin-left:4px;
+    }
+
+    .artistN {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .artistIntro {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.8px;
+        width: 100%;
+    }
+
+    .shieh{
+        display: none !important;
+    }
+
+    .shiehRwd{
+        display: flex;
+    }
+
+}
+
 
 /* Carousel 外層容器，固定寬度只顯示 3 個 item 與間距 */
 .paintCarosuel {
@@ -65,7 +131,10 @@
     width: 1240px;
     height: 453px;
     margin-top: 40px;
-    transform: translateX(100px);
+    right: -24.2%;
+    bottom: 5%;
+    overflow: hidden;
+
 }
 
 .paintCarosuel-1 {
@@ -73,8 +142,27 @@
     width: 1240px;
     height: 453px;
     margin-top: 40px;
-    transform: translateX(-343px);
+    left: -23.8%;
+    bottom: 2%;
+    overflow: hidden;
+
 }
+
+
+@media (max-width: 768px) {
+
+    .paintCarosuel,
+    .paintCarosuel-1 {
+        all: unset;
+        display: block;
+        width: auto;
+        height: 272px;
+        margin-top: unset;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+}
+
 
 /* 放所有 item 的 track，採用 flex 排列並設定間距 */
 .paintWrap {
@@ -127,23 +215,87 @@
     margin-top: 16px;
     width: 339px;
     height: auto;
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 24px;
 }
 
+.paintMedium {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
 .paintDetail {
-    width: 336;
-    height: 53;
+    width: 336px;
+    height: 53px;
     margin-top: 16px;
     gap: 4px;
     font-weight: 400;
     font-size: 16px;
 }
 
+
+
+@media (max-width: 768px) {
+
+    .paintWrap {
+        gap: 20px;
+        transition: unset;
+        width: auto;
+        overflow: unset;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin-top: 3px;
+    }
+
+    .paintItem {
+        width: 234px;
+        height: 272px;
+        border-radius: 20px;
+    }
+
+    .paintPhoto {
+        width: 214.9px;
+        height: 167.14px;
+        border-radius: 12px;
+    }
+
+    .paintName {
+        margin-top: 10px;
+        width: 200px;
+        font-size: 14px;
+        height:72px;
+    }
+
+    .paintMedium {
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.6px;
+    }
+
+    .paintDetail {
+        width: 200px;
+        height: 53px;
+        margin-top: 9.55px;
+        gap: 2px;
+        font-size:9.55px;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
 /* 右側箭頭按鈕 */
 .paintButtonL {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 45px;
     z-index: 10;
     background: transparent;
@@ -157,7 +309,7 @@
 
 .paintButtonR {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 910px;
     z-index: 10;
     background: transparent;
@@ -167,6 +319,15 @@
     height: 40px;
     cursor: pointer;
     outline: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .paintButtonL,
+    .paintButtonR {
+        display: none;
+    }
 }
 
 .paintButtonL img {

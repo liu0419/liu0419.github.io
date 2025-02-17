@@ -1,106 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>標籤式導航範例</title>
-  <style>
-    /* Tab Bar 的容器 */
-    .tab-bar {
-      display: flex;
-      border-bottom: 1px solid #ccc;
-    }
-    /* 每個 tab 選項 */
-    .tab {
-      padding: 10px 20px;
-      cursor: pointer;
-      position: relative;
-      /* 可選：設定文字顏色或其他樣式 */
-      color: #333;
-      font-size: 16px;
-    }
-    /* tab 底部的指示條 */
-    .tab .indicator {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: transparent;
-      transition: background-color 0.3s;
-    }
-    /* 當 tab 為 active 狀態，indicator 變紅 */
-    .tab.active .indicator {
-      background-color: red;
-    }
-    /* 內容區容器 */
-    .tab-content {
-      padding: 20px;
-    }
-    /* 每個內容區塊預設隱藏 */
-    .content {
-      display: none;
-    }
-    /* 顯示目前 active 的內容 */
-    .content.active {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="artist.css" />
+    
 </head>
 <body>
-  <!-- Tab Bar -->
-  <div class="tab-bar">
-    <div class="tab active" data-tab="1">
-      選項 1
-      <div class="indicator"></div>
-    </div>
-    <div class="tab" data-tab="2">
-      選項 2
-      <div class="indicator"></div>
-    </div>
-    <div class="tab" data-tab="3">
-      選項 3
-      <div class="indicator"></div>
-    </div>
-  </div>
+    <div class="artistC">
+        <div class="artistPhoto">
+            <img src="img/image 20.png">
+        </div>
+        <div class="artistCWord">
+            <button class="paintButtonL"><img src='img/btn (1).png'></button>
+            <button class="paintButtonR"><img src='img/btn.png'></button>
+            <div class="artistN">龐銚 老師</div>
+            <div class="artistIntro">
+                1973年生於北京，成長於香港與台北，畢業於臺灣藝術專科學校及美國國立芳邦大學藝術創作碩士。來自藝術世家，作品風格以黑白灰金屬色為主調，探索具象與非具象之間的純粹本質。曾獲台灣南瀛獎等多項榮譽，作品被多地典藏，並跨界主持榮獲金鐘獎，展現藝術生活的多元可能。
+            </div>
 
-  <!-- 內容區 -->
-  <div class="tab-content">
-    <div class="content active" data-tab="1">
-      <h2>選項 1 內容</h2>
-      <p>這裡是選項 1 的內容。</p>
-    </div>
-    <div class="content" data-tab="2">
-      <h2>選項 2 內容</h2>
-      <p>這裡是選項 2 的內容。</p>
-    </div>
-    <div class="content" data-tab="3">
-      <h2>選項 3 內容</h2>
-      <p>這裡是選項 3 的內容。</p>
-    </div>
-  </div>
+            <div class="paintCarosuel">
+                <div style="overflow: hidden; width: 1240px; margin: 0 auto;">
+                    <div class="paintWrap">
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="img/image (2).png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                秋分 (2021)
+                                <div style="font-weight: 300px;font-size: 14px;letter-spacing: 1px;">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :70.0 x 70.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
 
-  <script>
-    // 取得所有 tab 與內容區塊
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.content');
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="img/image (3).png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                小丘 (2021)
+                                <div style="font-weight: 300px;font-size: 14px;letter-spacing: 1px;">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :48.0 x 74.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
 
-    // 監聽每個 tab 的點擊事件
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // 先移除所有 tab 的 active 狀態
-        tabs.forEach(t => t.classList.remove('active'));
-        // 移除所有內容區塊的 active 狀態
-        contents.forEach(c => c.classList.remove('active'));
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="img/image (3).png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                小丘 (2021)
+                                <div style="font-weight: 300px;font-size: 14px;letter-spacing: 1px;">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :48.0 x 74.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
 
-        // 為點選的 tab 加上 active 狀態
-        tab.classList.add('active');
-        // 根據 tab 上的 data-tab 取得對應內容區塊並顯示
-        const tabId = tab.getAttribute('data-tab');
-        const activeContent = document.querySelector(`.content[data-tab="${tabId}"]`);
-        activeContent.classList.add('active');
-      });
-    });
-  </script>
+                        </div>
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="img/image (3).png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                csdcscdd
+                                <div style="font-weight: 300px;font-size: 14px;letter-spacing: 1px;">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :48.0 x 74.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

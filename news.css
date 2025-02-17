@@ -1,14 +1,15 @@
 .carousel-container {
     position: relative;
-    width: 1240px;
+    width: 100%;
     height: 434px;
-    /* 隱藏超出範圍的內容 */
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top:40px;
 }
 
 .carousel-wrapper {
-    width: 100%;
-    height: 100%;
+    width: 1240px;
     overflow: hidden;
 }
 
@@ -20,6 +21,41 @@
     /* 平滑切換效果 */
 }
 
+@media (max-width: 768px) {
+
+    .carousel-container {
+        height: 242px;
+        margin-top:19px;
+    }
+    .carousel-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    .carousel-items {
+        display: flex;
+        flex-direction: row;
+        transition: unset;
+        gap: 20px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+}
+
+.carousel-item-header {
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
+.separator {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.agency {
+    color: #1BA8B9;
+}
+
+
 .carousel-item:nth-child(3n+2),
 .carousel-item:nth-child(3n+3) {
     margin-left: 32px;
@@ -27,7 +63,7 @@
 
 /* 每個 item 寬度計算： (1240px - 64px) / 3 = 392px */
 .carousel-item {
-    width: calc((1240px - 64px) / 3);
+    width: 392px;
     height: 430px;
     flex-shrink: 0;
     /* 固定寬度，不因 flex 壓縮 */
@@ -36,6 +72,7 @@
     flex-direction: column;
 
 }
+
 
 .newsPicBox {
     width: 392px;
@@ -63,15 +100,17 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 31.2px;
-    letter-spacing: 0%;
     margin-top: 4px;
     margin-left: 12px;
     height: 62px;
     overflow: hidden;
-    display: -webkit-box;       /* 建立多行截斷效果必備 */
-  -webkit-box-orient: vertical; /* 垂直排列子元素 */
-  -webkit-line-clamp: 3;      /* 限制顯示 3 行 */
-  
+    display: -webkit-box;
+    /* 建立多行截斷效果必備 */
+    -webkit-box-orient: vertical;
+    /* 垂直排列子元素 */
+    -webkit-line-clamp: 3;
+    /* 限制顯示 3 行 */
+
 }
 
 .newsC {
@@ -90,23 +129,92 @@
     /* 超出部分以省略號顯示 */
 }
 
+
+@media (max-width: 768px) {
+
+    .carousel-item {
+        width: 233px;
+        height: 240px;
+    }
+
+    .newsPicBox {
+        width: 233px;
+        height: 187px;
+        border-radius: 20px;
+    }
+
+    .carousel-item-header {
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+
+    .news {
+        font-size: 8px;
+        line-height: 9.6px;
+        letter-spacing: 0.6px;
+    }
+
+    .separator {
+        margin-left: 4.6px;
+        margin-right: 4.6px;
+    }
+
+    .newsTopic {
+        font-size: 14px;
+        line-height: 18.2px;
+        margin-top: 2px;
+        margin-left: 8px;
+        height: 20px;
+    }
+
+    .newsC {
+        font-size: 10px;
+        letter-spacing: 1px;
+        height: 14px;
+        width: 217px;
+        margin-top: 4px;
+        margin-left: 8px;
+    }
+
+    .carousel-item:nth-child(3n+2),
+    .carousel-item:nth-child(3n+3) {
+        margin-left: unset;
+    }
+
+
+
+
+}
+
 /* 箭頭按鈕樣式 */
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     border: none;
-    color: #fff;
     padding: 10px;
     cursor: pointer;
     z-index: 10;
+    width: 50px;
 }
 
+@media (max-width: 768px) {
+    .arrow {
+        display: none !important;
+    }
+}
+
+.arrow img {
+    width: 100%;
+}
+
+
+
 .arrow.prev {
-    left: -50px;
+    left: 2%;
 }
 
 .arrow.next {
-    right: -50px;
+    right: 2%;
 }
