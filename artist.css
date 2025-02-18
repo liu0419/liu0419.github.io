@@ -296,7 +296,7 @@
 .paintButtonL {
     position: absolute;
     top: 50%;
-    left: 45px;
+    left: 0px;
     z-index: 10;
     background: transparent;
     border: none;
@@ -310,7 +310,7 @@
 .paintButtonR {
     position: absolute;
     top: 50%;
-    left: 910px;
+    left: 895px;
     z-index: 10;
     background: transparent;
     border: none;
