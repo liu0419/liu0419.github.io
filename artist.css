@@ -128,12 +128,14 @@
 /* Carousel 外層容器，固定寬度只顯示 3 個 item 與間距 */
 .paintCarosuel {
     position: absolute;
-    width: 1240px;
+    width: 1000px;
     height: 453px;
     margin-top: 40px;
-    right: -24.2%;
+    right: -6%;
     bottom: 5%;
     overflow: hidden;
+    padding-left: 36px;
+    margin-left: 28px;
 
 }
 
@@ -286,17 +288,11 @@
 }
 
 
-
-
-
-
-
-
 /* 右側箭頭按鈕 */
 .paintButtonL {
     position: absolute;
     top: 50%;
-    left: 0px;
+    left: 0%;
     z-index: 10;
     background: transparent;
     border: none;
@@ -310,7 +306,7 @@
 .paintButtonR {
     position: absolute;
     top: 50%;
-    left: 895px;
+    left: 82%;
     z-index: 10;
     background: transparent;
     border: none;
