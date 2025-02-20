@@ -1,0 +1,400 @@
+/* 1. 整個網頁背景：深藍色 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0D0D2B;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-family: "Manrope", Arial, sans-serif;
+  position: relative;
+}
+
+
+/* 2. 證書容器：視為獨立一塊 */
+.certificate-container {
+  width: 842px;
+  height: 595px;
+  margin: 40px auto; /* 置中 */
+  background:rgba(5, 9, 20, 0.8);
+  padding: 20px;
+  position: relative; /* 讓內部元素使用絕對定位 */
+  z-index: 1;
+  overflow: hidden; /* 讓內部元素使用絕對定位 */
+  /* 疊加 logo 背景圖片 */
+  background-image: url("../project/img/biglogo.png");
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: 15%, cover;
+}
+
+.colorlayer {
+  position: absolute; /* 讓它疊加在 .certificate-container 上 */
+  width: 470.97px;
+  height: 470.97px;
+  top: 50px;
+  left: 245px;
+  rotate: -60deg;
+  filter: blur(75px);
+  background: linear-gradient(
+    to bottom right,
+    rgba(30, 146, 255, 0.8),
+    rgba(195, 14, 255, 1) 
+    );     
+  z-index: 0;
+  opacity: 25%;
+}
+
+/* 3. 頂部 Header：切換語言按鈕 + 標題 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+/* .lang-btn {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 15px;
+} */
+.title {
+  font-size: 47.85px;
+  font-weight: 900;
+  line-height: 57.41px;
+  text-align: right;
+  margin-right: 32px; 
+  white-space: nowrap; /* 確保不換行 */
+
+}
+
+.title .solid {
+    color: white;
+}
+
+.title .outline {
+    color: transparent;
+    -webkit-text-stroke: 0.4px white;
+      margin-right: 32px;
+}
+
+.subtitle {
+  font-size: 12.82px;
+  font-weight: 500;
+  font-family: Inter;
+  font-style: italic;
+  text-align: right;
+  line-height: 15.51px;
+  letter-spacing: 0.255em;
+  margin-top: 1px; /* 與 title 底部保持 2px 的距離 */
+  margin-right: 32px;
+}
+
+
+/* 4. 主要內容：左右分欄 */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+.left-section {
+  left: 32px;
+}
+.right-section {
+  left: 538px;
+}
+/* 5. 左側：上方並排兩個小框 (採樣編號 / 採樣日期) + 下方一個大框 (作品資料) */
+.top-row {
+  display: flex;
+  gap: 10px;        /* 兩個小框間距 */
+  margin-bottom: 20px;
+}
+
+.sample-id-box {
+  position: relative;
+  border: 0.47px solid rgba(255,255,255,0.26);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  /* 減少上下 padding 來縮小高度 */
+  padding: 20px 15px 15px;
+  margin-bottom: 5px;
+  width: 201px;  
+  height: 71px;
+  text-align: center;
+  margin-left: 32px;
+  box-sizing: border-box;
+}
+
+/* 標題：絕對定位在框線頂部，水平置中 */
+.sample-id {
+  position: absolute;
+  top: 0;           /* 與 info-box 的頂部對齊 */
+  left: 50%;        /* 水平置中 */
+  transform: translate(-50%, -50%); /* 往左移一半寬度、往上移一半高度 */
+  background: radial-gradient(
+  circle at left,
+  rgba(122, 92, 191, 1),
+  rgba(55, 47, 126, 1) 
+  ); 
+  padding: 3px 0px;
+  border-radius: 16px;
+  font-weight: bold;
+  margin: 0;        /* 移除可能的預設 margin */
+  white-space: nowrap; /* 避免標題過長時換行，可視需求保留或移除 */
+  width: 80%;
+  text-align: center;
+}
+
+.sample-id-content{
+  font-family: manrope;
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 800;
+  width: 160px;
+  height: 33px;
+  text-align: center;
+}
+
+.sample-date-box {
+  position: relative;
+  border: 0.47px solid rgba(255,255,255,0.26);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  padding: 20px 15px 15px;
+  margin-bottom: 5px;
+  /* 寬度比 sample-id 大 20px */
+  width: 270px;
+  height: 71px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: 8px;
+}
+
+
+/* 標題：絕對定位在框線頂部，水平置中 */
+.sample-date {
+  position: absolute;
+  top: 0;           /* 與 info-box 的頂部對齊 */
+  left: 50%;        /* 水平置中 */
+  transform: translate(-50%, -50%); /* 往左移一半寬度、往上移一半高度 */
+  background: radial-gradient(
+  circle at left,
+  rgba(122, 92, 191, 1),
+  rgba(55, 47, 126, 1) 
+  ); 
+  padding: 3px 0px;
+  border-radius: 16px;
+  font-weight: bold;
+  margin: 0;        /* 移除可能的預設 margin */
+  white-space: nowrap; /* 避免標題過長時換行，可視需求保留或移除 */
+  width: 60%;
+  text-align: center;
+}
+
+.sample-date-content{
+  font-family: manrope;
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  height: 20px;
+}
+
+.info-box {
+  position: relative;  /* 讓標題可絕對定位 */
+  border: 0.47px solid rgba(255,255,255,0.26);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  /* 因為標題會壓在頂部，需要預留一些上方空間 */
+  padding: 22px 20px 10px; 
+  margin-bottom: 15px;     /* 區塊間距，可自行調整 */
+  text-align: left;
+  margin-left: 32px;
+  min-height: 103px; /* 設定最小高度，根據需要調整 */
+  width: 488px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 標題：絕對定位在框線頂部，水平置中 */
+.info-title {
+  position: absolute;
+  top: 0;           /* 與 info-box 的頂部對齊 */
+  left: 50%;        /* 水平置中 */
+  transform: translate(-50%, -50%); /* 往左移一半寬度、往上移一半高度 */
+  background: radial-gradient(
+  circle at left,
+  rgba(122, 92, 191, 1),
+  rgba(55, 47, 126, 1) 
+  ); 
+  padding: 3px 0;
+  border-radius: 16px;
+  font-weight: bold;
+  margin: 0;        /* 移除可能的預設 margin */
+  white-space: nowrap; /* 避免標題過長時換行，可視需求保留或移除 */
+  width: 35%;
+  text-align: center;
+}
+
+.info-box-content{
+    display: flex;
+    justify-content: space-between;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.info-box .left-part {
+    width: 48%;
+}
+.info-box .right-part {
+    width: 48%;
+}
+  
+/* 新增 info-box2 樣式 */
+.info-box2 {
+  position: relative;
+  border: 0.47px solid rgba(255,255,255,0.26);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  padding: 15px 20px 10px 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 32px;
+  height: 224px; 
+  width: 487px;
+  box-sizing: border-box;
+}
+
+.info-box2-content{
+  font-family: manrope;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 200;
+}
+
+.signup-content {
+    width: 450px;
+    height: 23px;
+    font-family: manrope;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22.8px;
+    margin-top: 10px;
+    line-height: 35px;
+}
+
+.date {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 425px;
+    height: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.52px;
+    letter-spacing: 1.5em;
+    margin-top: 100px;
+    text-align: center;
+    z-index: 2;
+}
+
+.stamp {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width:100px; 
+    height:100px; 
+    margin-left: 350px; 
+    margin-top: 10px; 
+    z-index: 1;
+}
+
+          
+/* 6. 右側：上方圖片容器 + 下方數位指紋 */
+.image-box {
+  position: relative;
+  width: 276px;
+  height: 295px;
+  border: 0.47px solid rgba(255,255,255,0.26);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  margin: 0 10px 20px 15px ;
+  box-sizing: border-box;
+  margin-right: 32px;
+}
+
+.fingerprint-box {
+  position: relative;
+  width: 276px;
+  height: 118px;
+  border: 0.47px solid rgba(255,255,255,0.26);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 25px 10px 20px 15px ;
+  box-sizing: border-box;
+}
+.fingerprint-container {
+  display: flex;
+  margin: 5px 8px 0px 8px;
+  justify-content: space-between;
+}
+.fingerprint-container div {
+  width: 56px;
+  height: 95px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;  /* 水平置中 */
+  align-items: flex-end;    /* 垂直靠底 */
+  position: relative;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: center;
+}
+
+.fingerprint-container img {
+  width: 56px;
+  height: 56px;
+  padding: 10px;
+  object-fit: cover;  /* 讓圖片適應容器 */
+  position: absolute;
+  top: 0; /* 讓圖片顯示在容器上方 */
+  left: 50%;
+  transform: translateX(-50%); /* 水平置中圖片 */
+}
+
+.fingerprint-box-title {
+  position: absolute;
+  top: 0;           /* 與 fingerprint-box 的頂部對齊 */
+  left: 50%;        /* 水平置中 */
+  transform: translate(-50%, -50%); /* 往左移一半寬度、往上移一半高度 */
+  background: radial-gradient(
+  circle at left,
+  rgba(122, 92, 191, 1),
+  rgba(55, 47, 126, 1) 
+  ); 
+  padding: 5px 10px;
+  border-radius: 40px;
+  font-weight: bold;
+  margin: 0;        /* 移除可能的預設 margin */
+  white-space: nowrap; /* 避免標題過長時換行，可視需求保留或移除 */
+  width: 60%;
+  text-align: center;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>採樣確認書草稿</title>
+  <style>
+    /* 1. 整個網頁背景：深藍色 */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0D0D2B;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    /* 2. 證書容器：視為獨立一塊 */
+    .certificate-container {
+      width: 900px;
+      margin: 40px auto; /* 置中 */
+      background: #1E1E50;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    /* 3. 頂部 Header：切換語言按鈕 + 標題 */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .lang-btn {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    /* 4. 主要內容：左右分欄 */
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left-section {
+      width: 55%;
+    }
+    .right-section {
+      width: 40%;
+    }
+    /* 5. 左側：上方並排兩個小框 (採樣編號 / 採樣日期) + 下方一個大框 (作品資料) */
+    .top-row {
+      display: flex;
+      gap: 20px;        /* 兩個小框間距 */
+      margin-bottom: 20px;
+    }
+    .info-box {
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 10px;
+      flex: 1;
+    }
+    .info-title {
+      background: #6A5ACD;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    /* 6. 右側：上方圖片容器 + 下方數位指紋 */
+    .image-box {
+      width: 100%;
+      height: 250px;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .fingerprint-box {
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .fingerprint-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .fingerprint-container div {
+      width: 70px;
+      height: 70px;
+      background-color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 證書容器 -->
+  <div class="certificate-container">
+    <!-- Header：切換語言按鈕 + 標題 -->
+    <div class="header">
+      <button id="lang-btn" class="lang-btn" onclick="switchLanguage()">switchlanguage</button>
+      <div class="title" id="title">採樣確認書</div>
+    </div>
+
+    <!-- 主要內容：左右分欄 -->
+    <div class="main-content">
+      <!-- 左側區塊 -->
+      <div class="left-section">
+        <!-- 上方：採樣編號 & 採樣日期 並排 -->
+        <div class="top-row">
+          <div class="info-box">
+            <div class="info-title" id="sample-id-title">採樣編號</div>
+            <p id="sample-id">TW-20240528</p>
+          </div>
+          <div class="info-box">
+            <div class="info-title" id="sample-date-title">採樣日期</div>
+            <p id="sample-date">2024/05/28 13:00</p>
+          </div>
+        </div>
+        <!-- 下方：作品資料 -->
+        <div class="info-box">
+          <div class="info-title" id="work-info-title">作品資料</div>
+          <p id="work-info">
+            作品名稱: 目擊者 <br>
+            尺寸: 91x59 cm <br>
+            典藏單位: 受委託人
+          </p>
+        </div>
+      </div>
+
+      <!-- 右側區塊 -->
+      <div class="right-section">
+        <!-- 圖片容器 (白底) -->
+        <div class="image-box" id="image-placeholder">
+          <!-- 可插入圖片 -->
+        </div>
+        <!-- 數位指紋 -->
+        <div class="fingerprint-box">
+          <div class="info-title" id="fingerprint-title">數位指紋</div>
+          <div class="fingerprint-container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 多語系切換功能 -->
+  <script>
+    const translations = {
+      zh: {
+        title: "採樣確認書",
+        sampleIdTitle: "採樣編號",
+        sampleDateTitle: "採樣日期",
+        workInfoTitle: "作品資料",
+        fingerprintTitle: "數位指紋",
+        sampleId: "TW-20240528",
+        sampleDate: "2024/05/28 13:00",
+        workInfo: "作品名稱: 目擊者 <br> 尺寸: 91x59 cm <br> 典藏單位: 受委託人",
+        buttonText: "switchlanguage"
+      },
+      en: {
+        title: "Completion of Sampling Confirmation",
+        sampleIdTitle: "Sampling Number",
+        sampleDateTitle: "Sampling Date",
+        workInfoTitle: "Work Information",
+        fingerprintTitle: "Digital Fingerprint",
+        sampleId: "TW-20240528",
+        sampleDate: "2024/05/28 13:00",
+        workInfo: "Title: Witness <br> Dimensions: 91x59 cm <br> Collector: Entrusted Party",
+        buttonText: "切換語言"
+      }
+    };
+
+    let currentLang = "zh";
+    function switchLanguage() {
+      currentLang = currentLang === "zh" ? "en" : "zh";
+      document.getElementById("title").textContent = translations[currentLang].title;
+      document.getElementById("sample-id-title").textContent = translations[currentLang].sampleIdTitle;
+      document.getElementById("sample-date-title").textContent = translations[currentLang].sampleDateTitle;
+      document.getElementById("work-info-title").textContent = translations[currentLang].workInfoTitle;
+      document.getElementById("fingerprint-title").textContent = translations[currentLang].fingerprintTitle;
+      document.getElementById("sample-id").textContent = translations[currentLang].sampleId;
+      document.getElementById("sample-date").textContent = translations[currentLang].sampleDate;
+      document.getElementById("work-info").innerHTML = translations[currentLang].workInfo;
+      document.getElementById("lang-btn").textContent = translations[currentLang].buttonText;
+    }
+  </script>
+</body>
+</html>
