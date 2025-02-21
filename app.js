@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
+const connectDB = require('./mongo/db.js');
+const certiRouter = require('./routes/certi.js');
+const port = 3000;
 app.use(express.json());
 app.use(express.static('public'));
-const port = 3000;
-const certiRouter = require('./routes/certi');
+connectDB()
+
 app.use('/certi', certiRouter);
 // 定義路由：當訪問根目錄時回應 "Hello Node.js backend!"
 app.get('/', (req, res) => {
