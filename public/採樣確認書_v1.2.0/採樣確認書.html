@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="certificate.css">
 </head>
 
-<body>
+<body class="bodyClass">
   <!-- 證書容器 -->
   
     <div class="certificate-container" id="certificate">
@@ -20,7 +20,7 @@
         <img src="./img/logo.png" style="width:45px; height:71px; margin-left: 32px;  " alt="">
         <!-- <button id="lang-btn" class="lang-btn" onclick="switchLanguage()">switchlanguage</button> -->
         <div class="title">
-          <span class="solid" id="title1"></span>
+          <span class="solid" id="title1" style=" color: white;"></span>
           <span class="outline" id="title2"></span>
           <div class="subtitle" id="subtitle"></div>
         </div>
@@ -99,14 +99,13 @@
   <script src="certificate.js"></script>
 
   <!-- canvas download -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
   <script>
      document.getElementById("download-btn").addEventListener("click", function () {
             let certificate = document.getElementById("certificate");
 
-            html2canvas(certificate, { scale: 2, useCORS: true }).then(canvas => {
+            html2canvas(certificate, { scale: 2, useCORS: true, backgroundColor:"#0D0D2B" }).then(canvas => {
                 let imageURL = canvas.toDataURL("image/png");
-
                 let link = document.createElement("a");
                 link.href = imageURL;
                 link.download = "certificate.png";
