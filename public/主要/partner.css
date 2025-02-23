@@ -1,7 +1,7 @@
 .partnerBar {
     width: 86%;
     height: 88px;
-    gap: 32px;
+    gap: 0;
     justify-self: center;
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@
 @media (max-width: 768px) {
   .partnerBar{
     width: 100%;
-    height:42.44px;
+    /* height:42.44px; */
     overflow-y: hidden;
     overflow-x: scroll;
     margin-top:3px;
@@ -21,7 +21,6 @@
 .partnerBox {
     width: 222px;
     height: 88px;
-    min-width: 152px;
     display: flex;
     justify-content: center;
     /* 水平置中 */
@@ -38,7 +37,7 @@
 }
 
 .partnerBox .indicator {
-    width: 222px;
+    width: 100%;
     height: 4px;
     border-radius: 8px;
     background-color: #E7EEEC;
@@ -48,8 +47,8 @@
 
 @media (max-width: 768px) {
     .partnerBox {
-        width: 107px;
-        height: 42px;
+        /* width: 107px;
+        height: 42px; */
         min-width: 73.31px;
     }
 
@@ -114,7 +113,7 @@
 }
 
 .partnerContentR {
-    width: 961px;
+    width: auto;
     height: auto;
     flex-wrap: wrap;
     font-size: 16px;

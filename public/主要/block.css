@@ -2,7 +2,7 @@
      position: relative;
      width: 100%;
      /* 最小寬度對應數值 */
-     height: 3313px;
+     height:auto;
      /* 區塊高度，可自行調整 */
      background-color: #050914;
      border-radius: 120px;
@@ -10,7 +10,9 @@
      flex-direction: column;
      align-items: center;
      margin-top: 32px;
+     padding-bottom: 70px;
  }
+
 
  @media (max-width: 768px){
     .block{
@@ -256,6 +258,7 @@
      position: relative;
      margin-top: 40px;
      display: flex;
+     flex-wrap: wrap;
      flex-direction: row;
      gap: 33px;
      justify-content: center;
@@ -331,9 +334,8 @@
     }
 
     .pPosition {
-        position: absolute;
-        top: 44.79%;
-        left: 98px;
+        position:unset;
+        margin-top:20px;
     }
 
     .element div {
@@ -345,9 +347,10 @@
 
  @media (max-width: 768px) {
      .lBlueBoxC {
-         margin-top: 60px;
+         margin-top: 20px;
          overflow-x: auto;
          overflow-y: hidden;
+         flex-wrap: unset;
          gap: 20px;
          justify-content: flex-start;
      }
@@ -389,6 +392,7 @@
      position: relative;
      justify-content: center;
      display: flex;
+     flex-wrap: wrap;
  }
 
  .ourServiceContent {
@@ -435,6 +439,11 @@
     height: 100%;
  }
 
+ @media (max-width: 1324px){
+    .order{
+        order:-1;
+    }
+ }
  @media (max-width: 768px) {
     .ourService {
         margin-top: 71px;

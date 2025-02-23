@@ -103,12 +103,12 @@
 // switchLanguage()
 
 
-let sampleId="1";
+let sampleId="TW-20240528";
 let currentLang = "zh";
 // 透過 sampleId 取得證書資料
 async function fetchCertificate(sampleId) {
     try {
-        const response = await fetch(`http://localhost:3000/certi/certiSearch/${sampleId}`);
+        const response = await fetch(`/certi/certiSearch/${sampleId}`);
         if (!response.ok) {
             throw new Error("Failed to fetch data");
         }
@@ -163,3 +163,9 @@ function switchLanguage() {
 
 // 初始加載
 fetchCertificate(sampleId);
+
+
+
+const el = document.querySelector("#something");
+html2canvas(el, [option])
+  .then(canvas => { document.body.appendChild(canvas) });

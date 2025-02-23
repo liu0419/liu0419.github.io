@@ -4,11 +4,13 @@ const path = require('path');
 const router = express.Router();
 const Certi = require('../models/certiSchema.js'); // 加入這行引入 Certi 模型
 
-// 定義 /certi.html 路由，回傳 HTML 檔案
-router.get('/certi.html', (req, res) => {
-    const id = req.query.id;
-    res.sendFile(path.join(__dirname, '..', 'public', '採樣確認書_v1.2.0', '採樣確認書.html'));
-});
+// // 定義 /certi.html 路由，回傳 HTML 檔案
+// router.get('/certi.html', (req, res) => {
+//     const id = req.query.id;
+//     res.sendFile(path.join(__dirname, '..', 'public', '採樣確認書_v1.2.0', '採樣確認書.html'));
+// });
+
+http://localhost:3000/採樣確認書_v1.2.0/採樣確認書.html
 
 router.post('/postdata', async (req, res) => {
   try {
