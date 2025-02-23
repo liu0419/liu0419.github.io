@@ -83,7 +83,7 @@
 @media (max-width: 768px) {
     .artistPhoto {
         height: 216px;
-        width: 178px;
+        width: 44%;
     }
 
     .artistPhoto img {
