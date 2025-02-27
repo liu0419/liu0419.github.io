@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateCarousel() {
         // 每頁寬度固定為 container 的寬度：1240px
-        const offset = currentPage * 1240;
+        const offset = currentPage * window.innerWidth*0.865;
         carouselItems.style.transform = `translateX(-${offset}px)`;
         updateButtons();
     }

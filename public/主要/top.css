@@ -17,7 +17,7 @@
  .photo-container {
      display: flex;
      /* 使用 Flexbox 排列 */
-     gap: 24px;
+     gap:1.6vw;
      /* 照片之间的间距 */
      align-items: center;
      /* 图片垂直居中 */
@@ -26,7 +26,7 @@
 
  /* 每张照片 */
  .photo {
-     width: 180px;
+     width:12.6vw;
      height:100%;
      /* 固定宽度 */
      opacity: 0;
