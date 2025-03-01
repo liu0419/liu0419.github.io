@@ -1,13 +1,13 @@
 .topic {
     width: fit-content;
     font-weight: 700;
-    font-size: 53.38px;
-    line-height: 68px;
+    font-size: 3.7vw;
+    line-height:4.7vw;
     background:linear-gradient(90deg, #A66CF6 0%, #4E8DBF 46.27%, #8E9AFC 100%);
     background-clip: text;
     color: transparent;
     margin: 0 auto;
-    margin-top:120px;
+    margin-top:8.4vw;
 }
 
 @media (max-width: 768px){

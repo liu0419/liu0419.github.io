@@ -1,12 +1,12 @@
 .certiW {
-    width:auto;
+    width:56.5vw;
     height: auto;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.6vw;
     letter-spacing: 1.2px;
     color: #000000;
-    margin: 16.7px auto 0;
+    margin: 1vw auto 0;
 }
 
 .certiBackg {
