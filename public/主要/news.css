@@ -21,7 +21,7 @@
     /* 平滑切換效果 */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     .carousel-container {
         height: 242px;
@@ -29,7 +29,7 @@
     }
     .carousel-wrapper {
         width: 100%;
-        height: auto;
+        height: fit-content;
     }
     .carousel-items {
         display: flex;
@@ -70,6 +70,8 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    /* bootstrap 撞名調整 */
+    margin-right: unset !important; 
 
 }
 
@@ -91,33 +93,32 @@
 
 .news {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 16.8px;
+    font-size: 1vw;
+    line-height: 1.1vw;
     letter-spacing: 1px;
 }
 
 .newsTopic {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 31.2px;
+    font-size: 1.6vw;
+    line-height: 2vw;
     margin-top: 4px;
     margin-left: 12px;
-    height: 62px;
-    overflow: hidden;
-    display: -webkit-box;
-    /* 建立多行截斷效果必備 */
-    -webkit-box-orient: vertical;
-    /* 垂直排列子元素 */
-    -webkit-line-clamp: 3;
-    /* 限制顯示 3 行 */
+    height: 2.5vw; /* 設定固定高度 */
+    overflow: hidden; /* 隱藏超出的文字 */
+    display: -webkit-box; /* 讓 `-webkit-line-clamp` 生效 */
+    -webkit-box-orient: vertical; /* 設定文字為垂直排列 */
+    -webkit-line-clamp: 1; /* 限制顯示 1 行，超出的部分省略 */
+    text-overflow: ellipsis; /* 省略號（部分瀏覽器需要） */
+    white-space: nowrap; /* 避免文字換行 */
 
 }
 
 .newsC {
     font-weight: 300;
-    font-size: 12px;
+    font-size:1vw;
     letter-spacing: 1.2px;
-    height: 14px;
+    height: 1.25vw;
     width: 27vw;
     margin-top: 4px;
     margin-left: 8px;
@@ -199,7 +200,7 @@
     width: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .arrow {
         display: none !important;
     }

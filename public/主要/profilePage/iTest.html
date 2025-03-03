@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../主要/news.css" />
+    <link rel="stylesheet" type="text/css" href="../news.css" />
     <style>
         /* 基本頁面設置 */
         :root {
@@ -43,11 +43,29 @@
             margin-bottom: -5.6vw;
         }
 
+        .profileGrid {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                /* display: none; */
+                all: unset;
+                width: 100%;
+                align-self: center;
+                margin-top: 10vw;
+                position: relative;
+                margin-bottom:5vw;
+            }
+
+
+        }
+
         .profile-container {
             margin: 30px auto;
-            padding: 0 var(--container-padding);
             max-width: var(--max-width);
             width: 100%;
+            overflow: hidden;
             position: relative;
             z-index: 2;
             display: flex;
@@ -65,13 +83,39 @@
             z-index: 3;
         }
 
+
+        @media (max-width: 768px) {
+            .col-md-4 {
+                all: unset;
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .profile-image {
+                height: 72.4vw;
+                top: -1vw;
+                left: -2vw;
+            }
+
+
+        }
+
         /* 個人資料區塊設置 */
         .profile-info {
-            margin-top: 200px;
+            margin-top: 14.3vw;
             background-color: transparent;
             text-align: justify;
             color: black;
             font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+
+            .col-md-8,
+            .profile-info {
+                all: unset;
+                display: contents;
+            }
         }
 
         /* 個人描述設置 */
@@ -81,7 +125,7 @@
             font-size: 1.1vw;
             line-height: 1.6vw;
             margin-top: -0.5vw;
-            font-weight: 300;
+            font-weight: 400;
             color: black;
         }
 
@@ -92,10 +136,71 @@
             text-align: left;
         }
 
+        @media (max-width: 768px) {
+            .name-section {
+                font-size: 6vw;
+                background: linear-gradient(to right, #a16eff, #5a93ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: absolute;
+                left: 43vw;
+                top: 10vw;
+            }
+
+            .description {
+                width: 48vw;
+                font-size: 2.5vw;
+                line-height: unset;
+                position: absolute;
+                left: 43vw;
+                top: 20vw;
+            }
+        }
+
         /* --------------------畫面上半部設定區塊 END --------------------*/
         /* --------------------畫面下半部設定區塊 START --------------------*/
 
         /* 時間軸橫線設置 */
+        .white-bar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .white-bar {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 85vw;
+                height: 12.2vw;
+                align-self: center;
+                border-radius: 25.5vw;
+                background-color: white;
+                box-shadow:
+                    0px 10px 44px 0px #6666661F,
+                    /* 外部陰影 */
+                    -5px -3px 12px 0px #C1CBDD29 inset,
+                    /* 內部陰影 1 */
+                    -3px -3px 10px 0px #545C6529 inset;
+                /* 內部陰影 2 */
+                gap:9.3vw;
+                color:black;
+                z-index: 2;
+            }
+
+            .white-bar div{
+                font-size:3.5vw;
+                font-weight:400;
+                border-bottom:0.8px solid black;
+                width:8vw;
+                height:6vw ;
+                display: flex;
+                justify-content: center;
+            }
+
+
+
+        }
+
         .timeline-container .timeline-line {
             position: absolute;
             left: 50%;
@@ -205,9 +310,9 @@
         /* 時間軸容器設置 */
         .timeline-container {
             position: relative;
-            margin-top: 2vw;
+            margin-top: -5vw;
             margin-bottom: 2vw;
-            padding: 3vw 2.5vw;
+            padding: 8vw 2.5vw;
             width: 95%;
             align-self: center;
             border-radius: 8vw;
@@ -308,9 +413,9 @@
         /* 固定區塊在畫面右上角 */
         .region-year-container {
             position: absolute;
-            top: -60px;
+            top: -1.3vw;
             /* 整個區塊往上調整 */
-            right: -50px;
+            right: 0.35vw;
             /* 往右調整 */
             display: flex;
             flex-direction: column;
@@ -320,26 +425,34 @@
 
         /* 超大字體 + 半透明效果 (年份) */
         .year-box {
-            font-size: 8rem;
+            font-size: 10vw;
             font-weight: bold;
             color: rgba(125, 89, 255, 0.616);
             -webkit-text-stroke: 2px rgba(125, 89, 255, 0.664);
             opacity: 0.1;
             text-transform: uppercase;
             position: relative;
-            top: -95px;
-            right: 90px;
+            top: -6.8vw;
+            right: 4.3vw;
         }
 
         /* 超大字體 + 半透明效果 (地區) */
         .region-box {
-            font-size: 7rem;
+            font-size: 8vw;
             font-weight: bold;
             color: transparent;
             -webkit-text-stroke: 2px rgba(125, 89, 255, 0.712);
             opacity: 0.1;
             position: relative;
             z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .region-year-container {
+                transform: scale(1.1);
+                top: 1.7vw;
+                right: 3.35vw;
+            }
         }
 
         /* --------------------畫面右上角設定區塊 END --------------------*/
@@ -357,11 +470,11 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .paintWrap{
-            overflow:hidden;
-            width:87vw;
+        .paintWrap {
+            overflow: hidden;
+            width: 87vw;
             display: flex;
-            gap:2.2vw;
+            gap: 2.2vw;
             justify-self: center;
         }
 
@@ -433,6 +546,11 @@
 
         /* 卡片基本樣式 */
         .exhibition-card,
+
+        .exhibition-section {
+            margin-top: 6vw;
+        }
+
         .article-card {
             width: 320px;
             height: 400px;
@@ -527,113 +645,14 @@
 
         /* 相關文章區塊 */
         .related-articles-section {
-            margin-top: 50px;
+            margin-top: 12vw;
         }
 
-        /* 文章卡片樣式 */
-        .article-card {
-            background: white;
-            border-radius: 20px;
-            /* 圓角增加 */
-            overflow: hidden;
-            text-align: left;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
+        .black {
+            color: black;
         }
 
-        /* 滑鼠懸停時微微放大 */
-        .article-card:hover,
-        .exhibition-card:hover {
-            transform: scale(1.02);
-        }
 
-        /* 文章封面圖片 */
-        .article-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-
-        /* 文章來源 + 分類 */
-        .article-meta {
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 5px;
-        }
-
-        /* 文章來源（CNN 等） */
-        .article-source {
-            font-weight: bold;
-            color: #00a3ff;
-        }
-
-        /* 文章標題 */
-        .article-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 8px;
-        }
-
-        /* 文章描述 */
-        .article-description {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        /* 展覽區塊 */
-        .exhibition-section {
-            margin-top: 50px;
-        }
-
-        /* 展覽卡片樣式 */
-        .exhibition-card {
-            background: white;
-            border-radius: 20px;
-            /* 圓角增加 */
-            overflow: hidden;
-            text-align: left;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* 展覽封面圖片 */
-        .exhibition-image {
-            width: 100%;
-            height: 200px;
-            /* 圖片高度增加 */
-            object-fit: cover;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-
-        /* 展覽 */
-        .exhibition-info {
-            padding: 15px;
-        }
-
-        /* 展覽 */
-        .exhibition-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 8px;
-        }
-
-        /* 展覽日期 */
-        .exhibition-date {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        /* 展覽地點 */
-        .exhibition-location {
-            font-size: 0.9rem;
-            color: #777;
-        }
 
         /* --------------------作品、展覽、文章區塊 END --------------------*/
     </style>
@@ -653,16 +672,24 @@
             <!-- Profile Info -->
             <div class="col-md-8">
                 <div class="profile-info">
-                    <div class="d-flex justify-content-between">
-                        <div class="name-section" id="name"></div>
-                    </div>
+
+                    <div class="name-section" id="name"></div>
+
                     <div class="mt-3">
                         <div id="description" class="description"></div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Timeline Section -->
+        <div class="white-bar">
+            <div>簡歷</div>
+            <div>作品</div>
+            <div>展覽</div>
+            <div>文章</div>
+
+        </div>
         <div class="timeline-container">
             <div id="timelineContainer"></div>
         </div>
@@ -722,8 +749,8 @@
                 <!-- 展覽資訊區塊-->
                 <div class="exhibition-section">
                     <h2 class="section-title">展覽</h2>
-                    <div class="carousel-container" style="color:black">
-                        <button class="arrow prev"><img src="../主要/img/ (1).png"></button>
+                    <div class="carousel-container black">
+                        <button class="arrow prev"><img src="../img/btn (1).png"></button>
                         <div class="carousel-wrapper">
                             <div class="carousel-items">
                                 <div class="carousel-item">
@@ -735,183 +762,124 @@
                                         <span class="separator">｜</span>
                                         <span class="news">新聞報導</span>
                                     </div>
-                
+
                                     <div class="newsTopic">
                                         藝術品認證導入區塊鏈 業者交易更安全
                                     </div>
                                     <div class="newsC">
                                         以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
                                     </div>
-                
+
                                 </div>
-                
                                 <div class="carousel-item">
                                     <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
+                                        <img class="newsPic" src="img/exhibition1.png">
                                     </div>
                                     <div class="carousel-item-header">
                                         <span class="news agency">中央通訊社</span>
                                         <span class="separator">｜</span>
                                         <span class="news">新聞報導</span>
                                     </div>
-                
-                                    <div class="newsTopic">
-                                        開啟全球藝術品驗證的新時代：藝信用光學、AI與區塊鏈技術實現科學化的藝術驗證標準
-                                    </div>
-                
-                                    <div class="newsC">
-                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
-                                    </div>
-                                </div>
-                
-                                <div class="carousel-item">
-                                    <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
-                                    </div>
-                                    <div class="carousel-item-header">
-                                        <span class="news agency">中央通訊社</span>
-                                        <span class="separator">｜</span>
-                                        <span class="news">新聞報導</span>
-                                    </div>
-                
+
                                     <div class="newsTopic">
                                         藝術品認證導入區塊鏈 業者交易更安全
                                     </div>
-                
                                     <div class="newsC">
                                         以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
                                     </div>
+
                                 </div>
-                
                                 <div class="carousel-item">
                                     <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
+                                        <img class="newsPic" src="img/exhibition1.png">
                                     </div>
                                     <div class="carousel-item-header">
                                         <span class="news agency">中央通訊社</span>
                                         <span class="separator">｜</span>
                                         <span class="news">新聞報導</span>
                                     </div>
-                
+
                                     <div class="newsTopic">
                                         藝術品認證導入區塊鏈 業者交易更安全
                                     </div>
-                
                                     <div class="newsC">
                                         以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
                                     </div>
+
                                 </div>
-                
-                                <div class="carousel-item">
-                                    <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
-                                    </div>
-                                    <div class="carousel-item-header">
-                                        <span class="news agency">中央通訊社</span>
-                                        <span class="separator">｜</span>
-                                        <span class="news">新聞報導</span>
-                                    </div>
-                
-                                    <div class="newsTopic">
-                                        藝術品認證導入區塊鏈 業者交易更安全
-                                    </div>
-                
-                                    <div class="newsC">
-                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
-                                    </div>
-                                </div>
-                
-                                <div class="carousel-item">
-                                    <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
-                                    </div>
-                                    <div class="carousel-item-header">
-                                        <span class="news agency">中央通訊社</span>
-                                        <span class="separator">｜</span>
-                                        <span class="news">新聞報導</span>
-                                    </div>
-                
-                                    <div class="newsTopic">
-                                        藝術品認證導入區塊鏈 業者交易更安全
-                                    </div>
-                
-                                    <div class="newsC">
-                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
-                                    </div>
-                                </div>
-                
-                                <div class="carousel-item">
-                                    <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
-                                    </div>
-                                    <div class="carousel-item-header">
-                                        <span class="news agency">中央通訊社</span>
-                                        <span class="separator">｜</span>
-                                        <span class="news">新聞報導</span>
-                                    </div>
-                
-                                    <div class="newsTopic">
-                                        藝術品認證導入區塊鏈 業者交易更安全
-                                    </div>
-                
-                                    <div class="newsC">
-                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
-                                    </div>
-                                </div>
-                
-                                <div class="carousel-item">
-                                    <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
-                                    </div>
-                                    <div class="carousel-item-header">
-                                        <span class="news agency">中央通訊社</span>
-                                        <span class="separator">｜</span>
-                                        <span class="news">新聞報導</span>
-                                    </div>
-                
-                                    <div class="newsTopic">
-                                        藝術品認證導入區塊鏈 業者交易更安全
-                                    </div>
-                
-                                    <div class="newsC">
-                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
-                                    </div>
-                                </div>
-                
-                                <div class="carousel-item">
-                                    <div class="newsPicBox">
-                                        <img class="newsPic" src="img/news.png">
-                                    </div>
-                                    <div class="carousel-item-header">
-                                        <span class="news agency">中央通訊社</span>
-                                        <span class="separator">｜</span>
-                                        <span class="news">新聞報導</span>
-                                    </div>
-                
-                                    <div class="newsTopic">
-                                        藝術品認證導入區塊鏈 業者交易更安全
-                                    </div>
-                
-                                    <div class="newsC">
-                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
-                                    </div>
-                                </div>
-                
-                
+
                             </div>
                         </div>
-                        <button class="arrow next"><img src="../主要/img/btn.png"></button>
+                        <button class="arrow next"><img src="../img/btn.png"></button>
                     </div>
-                
+
                 </div>
 
                 <!-- 相關文章區塊 -->
                 <div class="related-articles-section">
                     <h2 class="section-title">相關文章</h2>
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper" id="articleContainer">
-                            <!-- 動態插入 -->
+                    <div class="carousel-container black">
+                        <button class="arrow prev"><img src="../img/btn (1).png"></button>
+                        <div class="carousel-wrapper">
+                            <div class="carousel-items">
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
+                        <button class="arrow next"><img src="../img/btn.png"></button>
                     </div>
                 </div>
             </div>
@@ -1045,6 +1013,8 @@
                 timelineContainer.appendChild(timelineItem);
             });
         }
+
+
 
         function initTimeline() {
             document.querySelectorAll('.timeline-item').forEach(item => {
