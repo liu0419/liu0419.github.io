@@ -55,7 +55,7 @@
                 align-self: center;
                 margin-top: 10vw;
                 position: relative;
-                margin-bottom:5vw;
+                margin-bottom: 5vw;
             }
 
 
@@ -95,6 +95,7 @@
                 height: 72.4vw;
                 top: -1vw;
                 left: -2vw;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 66.84%, rgba(255, 255, 255, 0.7) 87.76%, #FFFFFF 100%);
             }
 
 
@@ -167,7 +168,7 @@
 
         @media (max-width: 768px) {
             .white-bar {
-                display:flex;
+                display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 85vw;
@@ -182,17 +183,17 @@
                     /* 內部陰影 1 */
                     -3px -3px 10px 0px #545C6529 inset;
                 /* 內部陰影 2 */
-                gap:9.3vw;
-                color:black;
+                gap: 9.3vw;
+                color: black;
                 z-index: 2;
             }
 
-            .white-bar div{
-                font-size:3.5vw;
-                font-weight:400;
-                border-bottom:0.8px solid black;
-                width:8vw;
-                height:6vw ;
+            .white-bar div {
+                font-size: 3.5vw;
+                font-weight: 400;
+                border-bottom: 0.8px solid black;
+                width: 8vw;
+                height: 6vw;
                 display: flex;
                 justify-content: center;
             }
@@ -213,6 +214,15 @@
             transform: translateX(-50%);
             z-index: 1;
         }
+
+        @media (max-width: 768px) {
+            .timeline-container .timeline-line {
+                left: 5vw;
+                width: 2px;
+            }
+        }
+
+
 
         /* 祖母綠圓點 */
         .timeline-dot.emerald {
@@ -250,6 +260,18 @@
             background: linear-gradient(to left, #11adb3, #baf1f5);
         }
 
+        @media (max-width: 768px) {
+
+            .timeline-dot.purple,
+            .timeline-dot.emerald {
+                left: 5vw;
+                width: 4vw;
+                height: 4vw;
+            }
+        }
+
+
+
         /* 時間軸橫線設置 紫色橫線 */
         .timeline-line-horizontal.purple {
             position: relative;
@@ -260,6 +282,17 @@
             transform: translate(-50%, -100%);
             z-index: 2;
             background: linear-gradient(to right, #73479c, #d3c1dd);
+        }
+
+        @media (max-width: 768px) {
+
+            .timeline-line-horizontal.emerald,
+            .timeline-line-horizontal.purple {
+                left: 15vw;
+                width: 10vw;
+                height: 1vw;
+                transform: translate(-50%, -400%);
+            }
         }
 
         /* 查看詳情按鈕 */
@@ -310,14 +343,11 @@
         /* 時間軸容器設置 */
         .timeline-container {
             position: relative;
-            margin-top: -5vw;
             margin-bottom: 2vw;
             padding: 8vw 2.5vw;
             width: 95%;
             align-self: center;
             border-radius: 8vw;
-            clip-path: ellipse(90% 70% at 50% 50%);
-
             /* 保持原有的背景設定 */
             background:
                 radial-gradient(circle at 70% 80%,
@@ -347,6 +377,13 @@
             backdrop-filter: blur(150px);
         }
 
+        @media (max-width: 768px) {
+            .timeline-container {
+                margin-top: -5vw;
+            }
+        }
+
+
         /* 時間軸項目設置 */
         .timeline-item {
             position: relative;
@@ -356,12 +393,28 @@
             text-align: center;
         }
 
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                gap: 3vw;
+            }
+        }
+
         /* 時間軸左邊內容設置 */
         .timeline-item.left .timeline-content {
             font-size: 1.0rem;
             padding-left: 58%;
             text-align: left;
         }
+
+        @media (max-width: 768px) {
+            .timeline-item.left .timeline-content {
+                padding-left: 12vw;
+            }
+
+        }
+
+
 
         /* 時間軸右邊內容設置 */
         .timeline-item.right .timeline-content {
@@ -370,6 +423,16 @@
             text-align: right;
             position: relative;
         }
+
+        @media (max-width: 768px) {
+            .timeline-item.right .timeline-content {
+                text-align: left;
+                padding-left: 12vw;
+                padding-right: unset;
+            }
+
+        }
+
 
         /* 各項目標題設置 */
         .timeline-title {
@@ -394,10 +457,32 @@
             margin-bottom: 10px;
         }
 
+        @media (max-width: 768px) {
+            .timeline-year {
+                font-size: 8vw;
+            }
+
+            .timeline-title {
+                font-size: 5vw;
+            }
+
+            .timeline-text {
+                font-size: 3.5vw;
+                line-height: 4.2vw;
+                margin-bottom: 4vw;
+            }
+        }
+
         /* 時間軸左邊文字設置 */
         .text-left {
             margin-bottom: -30px;
             text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .text-left {
+                text-align: right;
+            }
         }
 
         /* 時間軸右邊文字設置 */
@@ -470,6 +555,14 @@
             -webkit-text-fill-color: transparent;
         }
 
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 8vw;
+                margin-bottom: 3vw;
+                margin-top:5vw;
+            }
+        }
+
         .paintWrap {
             overflow: hidden;
             width: 87vw;
@@ -495,6 +588,8 @@
         }
 
 
+
+
         .paintPhoto {
             width: 25.2vw;
             height: 20vw;
@@ -505,6 +600,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .paintItem {
+                flex: 0 0 auto;
+                width: 59vw;
+                height: 68vw;
+                border-radius: 2vw;
+                gap: 2.4vw;
+            }
+
+            .paintPhoto {
+                width: 54vw;
+                height: 42vw;
+            }
+
+            .paintWrap {
+                overflow: unset;
+                overflow-x: scroll;
+                width: 87vw;
+                display: flex;
+                gap: 5vw;
+            }
+
         }
 
         .paintPhoto img {
@@ -536,6 +655,29 @@
             gap: 0.2vw;
             font-weight: 400;
             font-size: 1vw;
+        }
+
+        @media (max-width: 768px) {
+            .paintName {
+                height: 13.5vw;
+                width: 51vw;
+                font-size: 3vw;
+            }
+
+            .paintMedium {
+                font-weight: 300;
+                font-size: 2vw;
+                letter-spacing: 1px;
+            }
+
+            .paintDetail {
+                width: 23.5vw;
+                height: 3.7vw;
+                margin-top: 1vw;
+                gap: 0.2vw;
+                font-weight: 400;
+                font-size: 2vw;
+            }
         }
 
         /* Swiper 輪播容器設置 */
@@ -650,6 +792,22 @@
 
         .black {
             color: black;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                gap: 4x;
+            }
+
+            .icon-button {
+            gap: 2px;
+            border-radius:25vw;
+            padding: 6px 13px;
+        }
+
+       
+
+
         }
 
 
@@ -895,6 +1053,8 @@
                 year: '1963 -',
                 description: `擁有國立臺灣師範大學美術系藝術學博士學位，現任該校美術系兼任助理教授。他曾在新竹師院（現國立新竹教育大學）及臺北市立大學任教，參與數十次國內外聯展，獲得包括全國版畫展第一名和全國油畫展金牌在內的多項殊榮。目前擔任中華民國跨世紀油畫研究會及臺灣今日畫家協會的理事。\n \n
                 其創作理念是「體察生活，真心體悟」，他認為藝術是人類生命中最真摯且重要的紀錄形式。對他而言，藝術創作不僅是情感的表達，更是個人價值觀、生命經驗、處世態度及審美品味的綜合展現。因此，他將生活中對人事物的細膩觀察與真摯感悟融入作品中，賦予藝術創作深刻的意義。`,
+                description2:
+                '其創作理念是「體察生活，真心體悟」，他認為藝術是人類生命中最真摯且重要的紀錄形式。對他而言，藝術創作不僅是情感的表達，更是個人價值觀、生命經驗、處世態度及審美品味的綜合展現。因此，他將生活中對人事物的細膩觀察與真摯感悟融入作品中，賦予藝術創作深刻的意義。',
                 timeline: [
                     {
                         title: '學歷',
