@@ -100,4 +100,14 @@ router.delete("/certiDelete/:sampleId", async (req, res) => {
   }
 });
 
+
+router.get("/test/:string", async (req, res) => {
+  try{
+  const { string } = req.params;
+  res.send(string);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error", error: error.message });
+  }
+});
+
 module.exports = router;
