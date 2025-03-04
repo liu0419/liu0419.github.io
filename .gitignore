@@ -1,4 +1,4 @@
 test2
-mongo
-node_modules
+node_modules/
 t.html
+.env
