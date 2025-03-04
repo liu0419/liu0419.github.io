@@ -9,6 +9,21 @@
       align-items: center;
   }
 
+  .carousel-wrapper-1.right{
+    grid-column:1/2;
+  }
+
+
+  @media (max-width: 768px) {
+    .carousel-wrapper-1 {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        width: 95%;
+    }
+    .carousel-wrapper-1.right{
+        grid-column:1/3;
+      }
+  }
   .carousel-container-1 {
       overflow: hidden;
       width: 100%;
@@ -105,6 +120,37 @@
       gap: 0.2vw;
       font-weight: 400;
       font-size: 1vw;
+  }
+
+  @media (max-width: 768px) {
+    .paintItem {
+        width:59vw;
+        height:69vw;
+        border-radius:5vw;
+        gap:4vw;
+    }
+
+    .paintPhoto {
+        width:54vw;
+        height:42vw;
+        border-radius:3vw;
+    }
+
+    .paintName {
+        margin-top:1.1vw;
+        width:51vw;
+        font-size:3.5vw;
+    }
+
+    .paintMedium {
+        font-size:2vw;
+        letter-spacing: 2px;
+    }
+
+    .paintDetail {
+        font-size: 2vw;
+    }
+
   }
 
   @media (max-width: 1024px) {
