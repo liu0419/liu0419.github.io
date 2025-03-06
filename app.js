@@ -4,7 +4,7 @@ const connectDB = require('./mongo/db.js');
 const certiRouter = require('./routes/certi.js');
 const port = process.env.PORT || 3000;
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('frontend'));
 connectDB()
 
 app.use('/certi', certiRouter);

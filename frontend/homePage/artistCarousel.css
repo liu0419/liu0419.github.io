@@ -1,0 +1,167 @@
+  .carousel-wrapper-1 {
+      position: relative;
+      width: 58vw;
+      /* 2 個 item 的寬度 + gap */
+      grid-column: 2/3;
+      grid-row: 2/3;
+      justify-self: center;
+      display: flex;
+      align-items: center;
+  }
+
+  .carousel-wrapper-1.right{
+    grid-column:1/2;
+  }
+
+
+  @media (max-width: 768px) {
+    .carousel-wrapper-1 {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        width: 95%;
+    }
+    .carousel-wrapper-1.right{
+        grid-column:1/3;
+      }
+  }
+  .carousel-container-1 {
+      overflow: hidden;
+      width: 100%;
+  }
+
+  .carousel-wrap {
+      display: flex;
+      gap:2.2vw;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  /* 按鈕 */
+  .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3.5vw;
+      border: none;
+      background: transparent;
+  }
+  .carousel-btn img{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .carousel-btn.left {
+      left: -4vw;
+  }
+
+  .carousel-btn.right {
+      right: -4vw;
+  }
+
+  .carousel-btn.hidden {
+      display: none;
+  }
+
+
+  .paintItem {
+      flex: 0 0 auto;
+      width:27.5vw;
+      height: 31.8vw;
+      border-radius: 2vw;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      box-shadow: -5px -3px 12px 0px rgba(193, 203, 221, 0.16) inset,
+          -3px -3px 10px 0px rgba(84, 92, 101, 0.16) inset,
+          0px 5px 44px 0px rgba(169, 168, 168, 0.12) inset;
+  }
+
+
+  .paintPhoto {
+      width:25.2vw;
+      height:20vw;
+      border-radius: 1.4vw;
+      background-color: #F6F7FB;
+      overflow: hidden;
+      /* 隱藏超出容器的部分 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .paintPhoto img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* 以完整呈現圖片，不拉伸 */
+  }
+
+  .paintName {
+      margin-top:1.1vw;
+      width: 24vw;
+      height: auto;
+      font-weight: 700;
+      font-size: 1.6vw;
+  }
+
+  .paintMedium {
+      font-weight: 300;
+      font-size: 1vw;
+      letter-spacing: 1px;
+  }
+
+  .paintDetail {
+      width:23.5vw;
+      height:3.7vw;
+      margin-top:1vw;
+      gap: 0.2vw;
+      font-weight: 400;
+      font-size: 1vw;
+  }
+
+  @media (max-width: 768px) {
+    .paintItem {
+        width:59vw;
+        height:69vw;
+        border-radius:5vw;
+        gap:4vw;
+    }
+
+    .paintPhoto {
+        width:54vw;
+        height:42vw;
+        border-radius:3vw;
+    }
+
+    .paintName {
+        margin-top:1.1vw;
+        width:51vw;
+        font-size:3.5vw;
+    }
+
+    .paintMedium {
+        font-size:2vw;
+        letter-spacing: 2px;
+    }
+
+    .paintDetail {
+        font-size: 2vw;
+    }
+
+  }
+
+  @media (max-width: 1024px) {
+    .carousel-btn img {
+        display: none !important;
+    }
+
+    .carousel-container-1 {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+
+  }

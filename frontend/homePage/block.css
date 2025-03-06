@@ -1,0 +1,510 @@
+ .block {
+     position: relative;
+     width: 100%;
+     /* 最小寬度對應數值 */
+     height:auto;
+     /* 區塊高度，可自行調整 */
+     background-color: #050914;
+     border-radius: 120px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 32px;
+     padding-bottom: 70px;
+ }
+
+
+ @media (max-width: 768px){
+    .block{
+        border-radius:32px;
+    }
+
+ }
+
+ /* ----------------------------------------------------------------- */
+ .proTeam {
+     color: white;
+     font-size: 53.38px;
+     font-weight: 700;
+     margin-top: 108px;
+ }
+
+ .flex-container {
+     display: flex;
+     justify-content: center;
+     flex-direction: row;
+     flex-wrap: wrap;
+     margin-top: 40px;
+     /* 與頂部距離 */
+     gap: 33px;
+     /* 水平間距 */
+ }
+
+
+ .Pcontainer {
+     width: 392px;
+     height: 392px;
+     border-radius: 32px;
+     /* 圓角邊界 */
+     border: 2px transparent;
+     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2),
+         inset 0 0 50px rgba(248, 182, 241, 0.8);
+
+     /* 使用 inset 來實現內部的發光效果 */
+     /* 使容器居中 */
+     position: relative;
+
+     /* 使用 flexbox 使子容器垂直排列 */
+     display: flex;
+     justify-content: center;
+     /* 垂直居中 */
+     align-items: center;
+     z-index: 3;
+     /* Pcontainer 層級在最上 */
+
+ }
+
+ @media (max-width: 768px) {
+     .proTeam {
+         font-size: 24px;
+         margin-top: 60px;
+     }
+
+     .flex-container {
+         margin-top: 24px;
+         flex-direction: column;
+         gap: 0px;
+     }
+
+     .Pcontainer {
+         transform: scale(0.92);
+         transform-origin: center;
+     }
+ }
+
+ /* 讓邊框有漸層，同時保留圓角 */
+ .Pcontainer::before {
+     z-index: 2;
+     content: "";
+     position: absolute;
+     inset: 0;
+     border-radius: 32px;
+     padding: 2px;
+     /* 設定邊框寬度 */
+     background: radial-gradient(88.78% 88.78% at 50% 38.52%,
+             #F86975 14.5%,
+             #A66CF6 24%,
+             #FBBA68 35%,
+             #BF88FC 58%,
+             #B780F8 70%,
+             #F8B6F1 81%,
+             #8E9AFC 92%);
+
+     /* 讓內部透明 */
+     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+     -webkit-mask-composite: destination-out;
+     mask-composite: exclude;
+ }
+
+ .glow {
+     position: absolute;
+     width: 266px;
+     height: 266px;
+     left: 57px;
+     top: 53.99px;
+     background: radial-gradient(circle, rgba(0, 62, 122, 1) 100%, rgba(0, 92, 162, 0) 80%);
+     border-radius: 50%;
+     filter: blur(80px);
+     opacity: 1;
+     pointer-events: none;
+     z-index: -1;
+     /* glow 層級最低 */
+
+ }
+
+ .rectangle {
+     width: 390px;
+     height: 129px;
+     background: linear-gradient(to top,
+             rgba(0, 0, 0, 1) 0%,
+             /* 100% opacity */
+             rgba(0, 0, 0, 1) 0%,
+             /* 100% opacity */
+             rgba(0, 0, 0, 0.9) 50%,
+             /* 60% opacity */
+             rgba(0, 0, 0, 0) 100%
+             /* 0% opacity */
+         );
+     z-index: 1;
+     position: relative;
+     align-self: flex-end;
+     /* 使 rectangle 元素對齊容器的底部 */
+
+ }
+
+ .image-overlay {
+     position: absolute;
+     /* 讓圖片疊在 .Pcontainer 上 */
+     left: 177px;
+     right: 5px;
+     bottom: 55px;
+     width: auto;
+     /* 保持圖片原比例 */
+     max-width: calc(392px - 177px - 5px);
+     /* 避免超出 .Pcontainer */
+     z-index: 0;
+     /* 確保圖片在最上層 */
+
+ }
+
+ /* 轉換後的 CSS */
+ .outline-btn {
+     position: absolute;
+     width: 124px;
+     /* 寬度 */
+     height: 33px;
+     /* 高度 */
+     background-color: #1ba8b9;
+     /* 背景色 */
+     border-radius: 100px;
+     /* 左右兩邊圓弧 */
+     /* 可以根據需要加上額外的屬性 */
+     top: 23.99px;
+     left: 24px;
+     z-index: 5;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .name {
+     position: absolute;
+     font-family: sans-serif;
+     font-weight: 700;
+     font-size: 28px;
+     top: 23.99px;
+     left: 24px;
+     top: 238px;
+     left: 38px;
+     color: #ffffff;
+ }
+
+ .container {
+     position: absolute;
+     width: 330px;
+     /* 固定寬度 330px */
+     height: auto;
+     bottom: 21px;
+     left: 38px;
+     /* 距離父元素左邊距 38px */
+     display: flex;
+     /* 啟用 Flexbox */
+     flex-direction: column;
+     /* 讓 <p> 垂直排列 */
+     gap: 4px;
+     z-index: 7;
+
+ }
+
+ .container p {
+     font-size: 12px;
+     font-weight: 300;
+     color: white;
+     margin: 0;
+     z-index: 7;
+ }
+
+ /* ---------------------------- */
+
+ .redefineW {
+     display: flex;
+     flex-direction: column;
+     /* 垂直排列 */
+     color: white;
+     font-size: 53.38px;
+     font-weight: 700;
+     margin-top: 140px;
+     width: 641px;
+     gap: 4px;
+ }
+
+ .redefineW span {
+     color: white;
+     font-size: 27.25px;
+     font-weight: 700;
+     text-align: center;
+     opacity: 0.7;
+ }
+
+ @media (max-width: 768px) {
+     .redefineW {
+         font-size: 24px;
+         margin-top: 80px;
+         width: 294px;
+         gap: 8px;
+     }
+
+     .redefineW span {
+         font-size: 14px;
+
+     }
+ }
+
+ .lBlueBoxC {
+     width: 95%;
+     position: relative;
+     margin-top: 40px;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     gap: 33px;
+     justify-content: center;
+ }
+
+ .lBlueBox {
+     position: relative;
+     width: 392px;
+     height: 402px;
+     border-radius: 20px;
+     border: 2px solid rgba(43, 224, 236, 0.5);
+     display: flex;
+     flex-direction: column;
+     /* 垂直排列 */
+     align-items: center;
+     padding: 40px;
+     /* 添加 40px 的內邊距 */
+     box-sizing: border-box;
+     /* 確保 padding 不影響 box 的外部尺寸 */
+     gap: 16px
+ }
+
+ .lBlueBoxHeading {
+     font-size: 27.25px;
+     font-weight: 700;
+     color:
+         white;
+
+ }
+
+ .lBlueBoxContent {
+     font-size: 12px;
+     font-weight: 300;
+     color: rgba(255, 255, 255, 0.8);
+ }
+
+ .element {
+     position: absolute;
+     /* 假設是絕對定位 */
+     width: 88px;
+     height: 56px;
+     padding: 16px 24px;
+     /* 上下 16px，左右 24px */
+     border-radius: 100px;
+     /* 圓角設定 */
+     transform: rotate(-26deg);
+     /* 旋轉 15 度 */
+     background: radial-gradient(100% 256.33% at 0% 7.41%, #64CEDB 0%, #15A6B7 100%);
+     z-index: 10;
+     box-sizing: border-box
+ }
+
+ .pPosition {
+     position: absolute;
+     top: 26.7%;
+     left: 4%;
+ }
+
+ .element div {
+     color: white;
+     font-size: 20px;
+     font-weight: 400;
+     text-align: center;
+ }
+
+ @media (max-width: 768px) {
+    .element {
+        width: 68px;
+        height: 28px;
+        padding: 6px 20px;
+        /* 上下 16px，左右 24px */
+        transform: unset;
+    }
+
+    .pPosition {
+        position:unset;
+        margin-top:20px;
+    }
+
+    .element div {
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+    }
+ }
+
+ @media (max-width: 768px) {
+     .lBlueBoxC {
+         margin-top: 20px;
+         overflow-x: auto;
+         overflow-y: hidden;
+         flex-wrap: unset;
+         gap: 20px;
+         justify-content: flex-start;
+     }
+
+     .lBlueBox {
+         width: 234px;
+         height: 360px;
+         border-radius: 11.93px;
+         align-items: center;
+         padding: 16px;
+         gap: 8px;
+
+     }
+
+     .lBlueBoxHeading {
+         font-size: 16px;
+     }
+
+
+     .lBlueBoxContent {
+         letter-spacing: 0.8px;
+     }
+
+ }
+
+ .ourService {
+     position: relative;
+     margin-top: 111px;
+     font-size: 36px;
+     font-weight: 700;
+     color: white;
+ }
+
+ .ourServiceContainer {
+     margin-top: 80px;
+     height: auto;
+     width: 100%;
+     gap: 100px;
+     position: relative;
+     justify-content: center;
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+ .ourServiceContent {
+     gap: 35px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     left: 7%;
+     top: 27.7%
+ }
+
+ .ourServiceHeading {
+     width: 206px;
+     height: 57px;
+     background: linear-gradient(to top, #1ba8b9 40%, transparent 40%);
+     color: white;
+     font-weight: 700;
+     font-size: 36px;
+     line-height: 48px;
+     display: flex;
+     justify-content: center;
+ }
+
+ .ourServiceDetail {
+     width: 498px;
+     height: 96px;
+     font-weight: 300;
+     font-size: 16px;
+     line-height: 24px;
+     letter-spacing: 1.2px;
+     color: rgba(255, 255, 255, 0.8);
+ }
+
+ .ourServiceImg {
+     width: 710px;
+     height: 472px;
+     right:7%;
+     top:0;
+ }
+
+ .ourServiceImg img{
+    width: 100%;
+    height: 100%;
+ }
+
+ @media (max-width: 1324px){
+    .order{
+        order:-1;
+    }
+ }
+ @media (max-width: 768px) {
+    .ourService {
+        margin-top: 71px;
+        font-size: 24px;
+    }
+
+    .ourServiceContainer {
+        margin-top: 76px;
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        width: 91%;
+        align-items: center;
+    }
+
+    .ourServiceContent {
+        gap: 12px;
+        left: 0;
+        bottom:0;
+    }
+
+    .ourServiceHeading {
+        width: 122px;
+        height: 27px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .ourServiceDetail {
+        width: 100%;
+        height: 72px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.8px;
+    }
+
+    .ourServiceImg {
+        width: 361px;
+        height: 240px;
+        order:-1;
+    }
+   
+
+
+
+
+ }
+
+
+
+
+
+ /* ----------------------------------------------最新消息 */
+ .newsBox {
+     display: flex;
+     gap: 32px;
+     width: fit-content;
+     /* 寬度根據內容調整 */
+     max-width: 100%;
+     /* 避免超出父級元素 */
+     overflow-x: auto;
+     /* 超出部分可滾動 */
+     white-space: nowrap;
+     /* 防止元素換行 */
+ }

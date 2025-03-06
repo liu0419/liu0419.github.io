@@ -1,0 +1,23 @@
+.topic {
+    width: fit-content;
+    font-weight: 700;
+    font-size: 3.7vw;
+    line-height:4.7vw;
+    background:linear-gradient(90deg, #A66CF6 0%, #4E8DBF 46.27%, #8E9AFC 100%);
+    background-clip: text;
+    color: transparent;
+    margin: 0 auto;
+    margin-top:8.4vw;
+}
+
+@media (max-width: 768px){
+    .topic {
+        font-size: 24px;
+        line-height: 36px;
+        margin-top:56px;
+    }
+    .none{
+        display: none;
+    }
+
+}

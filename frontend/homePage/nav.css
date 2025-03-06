@@ -1,0 +1,101 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    /* 固定位置 */
+    top: 0;
+    /* 緊貼螢幕頂部 */
+    /* 再把整個元素向左移半個自身寬度，使其真正置中 */
+    height:4.4vw;
+    /* 高度 */
+    background: rgba(237, 239, 237, 0.8);
+    ;
+    backdrop-filter: blur(20px);
+    /* 背景模糊效果 */
+    z-index: 1000;
+    /* 確保導覽列位於其他內容之上 */
+    display: flex;
+}
+
+.navbarLogo {
+    width:5vw;
+    height: 3vw;
+    align-self: center;
+    margin-left: 2.7777%;
+}
+
+.navbarLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.navOpt {
+    margin-left: 6.95vw;
+    width: 49.5vw;
+    gap: 12%;
+    font-size:1.1vw;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+}
+
+.navOpt div {
+    width: 25%;
+}
+
+.navPerson {
+    width:2vw;
+    height:2vw;
+    position: absolute;
+    right: 2.8%;
+    align-self: center;
+}
+
+.navPerson img {
+    width: 100%;
+    height: 100%;
+}
+
+.navHam {
+    display: none;
+    width: 1.1vw;
+    height: 1.1vw;
+    position: absolute;
+    right: 4.1%;
+    align-self: center;
+}
+
+.navHam img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        height:40px;
+    }
+    .navbarLogo {
+        width: 48.39px;
+        height: 27.4px;
+        margin-left:4%;
+    }
+
+    .navOpt{
+        display:none;
+    }
+
+    .navPerson {
+        width: 16px;
+        height: 16px;
+        right: 11.2%;
+    }
+
+    .navHam{
+        display:block;
+    }
+
+
+
+}
