@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const nextButton = carousel.querySelector('#nextBtn');
         const items = carouselItems.querySelectorAll('.paintItem');
         const itemsPerPage = 3; // 每次移動 3 個 item
-        const itemWidth = window.innerWidth * 0.855; // 單次移動距離 84.5vw
+        const itemWidth = window.innerWidth * 0.845; // 單次移動距離 84.5vw
         let currentPage = 0;
         const totalPages = Math.ceil(items.length / itemsPerPage);
 
