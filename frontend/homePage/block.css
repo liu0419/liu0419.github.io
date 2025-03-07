@@ -1,6 +1,7 @@
  .block {
+    justify-self: center;
      position: relative;
-     width: 100%;
+     width:90%;
      /* 最小寬度對應數值 */
      height:auto;
      /* 區塊高度，可自行調整 */
@@ -11,6 +12,8 @@
      align-items: center;
      margin-top: 32px;
      padding-bottom: 70px;
+     transition: width 0.5s ease-out, transform 0.5s ease-out; /* 添加平滑動畫 */
+    
  }
 
 
