@@ -36,7 +36,7 @@ router.post('/signup', async (req, res) => {
 
   // 1-3 回應
   res.status(201).send({
-    message: '註冊成功'
+    message: '註冊成功!'
   })
 
 })
