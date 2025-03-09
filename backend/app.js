@@ -26,28 +26,3 @@ app.get('/', (req, res) => {
     console.log("Available Routes:");
     console.log(app._router.stack.filter(r => r.route).map(r => r.route.path));
   });
-
-  app.post('/signup', async (req, res) => {
-    const { email, password, username } = req.body;
-    console.log(email, password, username);
-  
-    if (users[email]) {
-      return res.status(400).send({ error: '用戶已存在'})
-    }
-  
-    // 1-1 加密密碼
-    const hashPassword = await bcrypt.hash(password, 10);
-    console.log(`加密密碼：${hashPassword}`);
-  
-    // 1-2 資料儲存
-    users[email] = {
-      password: hashPassword,
-      username
-    };
-  
-    // 1-3 回應
-    res.status(201).send({
-      message: '註冊成功'
-    })
-  
-  })
