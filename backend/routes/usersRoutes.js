@@ -1,4 +1,6 @@
+console.log("✅✅✅✅ usersRoutes.js 已載入");
 const express = require('express');
+
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
