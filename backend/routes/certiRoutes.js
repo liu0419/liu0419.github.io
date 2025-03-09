@@ -10,7 +10,7 @@ const Certi = require('../models/certiSchema.js'); // 加入這行引入 Certi �
 //     res.sendFile(path.join(__dirname, '..', 'public', '採樣確認書_v1.2.0', '採樣確認書.html'));
 // });
 
-http://localhost:3000/採樣確認書_v1.2.0/採樣確認書.html
+// http://localhost:3000/採樣確認書_v1.2.0/採樣確認書.html
 
 router.post('/postdata', async (req, res) => {
   try {
