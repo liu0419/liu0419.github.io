@@ -1,0 +1,222 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top:3vw;
+}
+
+.carousel-wrapper {
+    width: 86.5vw;
+    overflow: hidden;
+}
+
+/* 利用 flex 排列並設定間距 */
+.carousel-items {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.5s ease;
+    /* 平滑切換效果 */
+}
+
+@media (max-width: 1024px) {
+
+    .carousel-container {
+        height: 30vw;
+        margin-top:19px;
+    }
+    .carousel-wrapper {
+        width: 100%;
+        height: fit-content;
+    }
+    .carousel-items {
+        display: flex;
+        flex-direction: row;
+        transition: unset;
+        gap: 20px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+}
+
+.carousel-item-header {
+    margin-top: 12px;
+    margin-left: 12px;
+   
+}
+
+.separator {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.agency {
+    color: #1BA8B9;
+}
+
+
+.carousel-item:nth-child(3n+2),
+.carousel-item:nth-child(3n+3) {
+    margin-left: 2vw;
+}
+
+/* 每個 item 寬度計算： (1240px - 64px) / 3 = 392px */
+.carousel-item {
+    width: 27.5vw;
+    height: 30vw;
+    flex-shrink: 0;
+    /* 固定寬度，不因 flex 壓縮 */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* bootstrap 撞名調整 */
+    margin-right: unset !important; 
+
+}
+
+
+.newsPicBox {
+    width: 27.5vw;
+    height: 22vw;
+    border-radius: 2.2vw;
+    overflow: hidden;
+    /* 確保圖片不會超出圓角區域 */
+}
+
+.newsPic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 讓圖片完整覆蓋容器，並保持比例 */
+}
+
+.news {
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.1vw;
+    letter-spacing: 1px;
+}
+
+.newsTopic {
+    font-weight: 700;
+    font-size: 1.6vw;
+    line-height: 2vw;
+    margin-top: 4px;
+    margin-left: 12px;
+    height: 2.5vw; /* 設定固定高度 */
+    overflow: hidden; /* 隱藏超出的文字 */
+    display: -webkit-box; /* 讓 `-webkit-line-clamp` 生效 */
+    -webkit-box-orient: vertical; /* 設定文字為垂直排列 */
+    -webkit-line-clamp: 1; /* 限制顯示 1 行，超出的部分省略 */
+    text-overflow: ellipsis; /* 省略號（部分瀏覽器需要） */
+    white-space: nowrap; /* 避免文字換行 */
+
+}
+
+.newsC {
+    font-weight: 300;
+    font-size:1vw;
+    letter-spacing: 1.2px;
+    height: 1.25vw;
+    width: 27vw;
+    margin-top: 4px;
+    margin-left: 8px;
+    white-space: nowrap;
+    /* 禁止換行 */
+    overflow: hidden;
+    /* 隱藏超出部分 */
+    text-overflow: ellipsis;
+    /* 超出部分以省略號顯示 */
+}
+
+
+@media (max-width: 768px) {
+
+    .carousel-item {
+        width: 233px;
+        height: 240px;
+    }
+
+    .newsPicBox {
+        width: 233px;
+        height: 187px;
+        border-radius: 20px;
+    }
+
+    .carousel-item-header {
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+
+    .news {
+        font-size: 8px;
+        line-height: 9.6px;
+        letter-spacing: 0.6px;
+    }
+
+    .separator {
+        margin-left: 4.6px;
+        margin-right: 4.6px;
+    }
+
+    .newsTopic {
+        font-size: 14px;
+        line-height: 18.2px;
+        margin-top: 2px;
+        margin-left: 8px;
+        height: 20px;
+    }
+
+    .newsC {
+        font-size: 10px;
+        letter-spacing: 1px;
+        height: 14px;
+        width: 217px;
+        margin-top: 4px;
+        margin-left: 8px;
+    }
+
+    .carousel-item:nth-child(3n+2),
+    .carousel-item:nth-child(3n+3) {
+        margin-left: unset;
+    }
+
+
+
+
+}
+
+/* 箭頭按鈕樣式 */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    width: 50px;
+}
+
+@media (max-width: 1024px) {
+    .arrow {
+        display: none !important;
+    }
+}
+
+.arrow img {
+    width: 100%;
+}
+
+
+
+.arrow.prev {
+    left: 2%;
+}
+
+.arrow.next {
+    right: 2%;
+}

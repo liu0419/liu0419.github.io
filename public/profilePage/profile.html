@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="news.css" />
+    <link rel="stylesheet" type="text/css" href="./news.js" />
+    <style>
+        /* 基本頁面設置 */
+        :root {
+            --max-width: 1440px;
+            --container-padding: 20px;
+
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        p {
+            white-space: normal;
+        }
+
+        body {
+            background: url('../img/Background.png') no-repeat top 100px center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft JhengHei", sans-serif;
+            margin-bottom: 100px;
+        }
+
+        /* --------------------畫面上半部設定區塊 START --------------------*/
+
+        /* 個人資料容器設置 */
+        .row {
+            margin-bottom: -5.6vw;
+        }
+
+        .profileGrid {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                all: unset;
+                align-self: center;
+                margin-top: 10vw;
+                position: relative;
+                margin-bottom: 5vw;
+            }
+
+
+        }
+
+        .profile-container {
+            margin: 30px auto;
+            max-width: var(--max-width);
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+
+        /* 個人照片設置 */
+        .profile-image {
+            height: 42.6vw;
+            object-fit: cover;
+            position: relative;
+            top: 12.6vw;
+            left: 3.5vw;
+            z-index: 3;
+        }
+
+
+        @media (max-width: 768px) {
+            .col-md-4 {
+                all: unset;
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .profile-image {
+                height: 72.4vw;
+                top: -1vw;
+                left: -2vw;
+                mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0.84%, rgba(255, 255, 255, 0.7) 30.76%, #FFFFFF 100%);
+
+            }
+
+
+        }
+
+        /* 個人資料區塊設置 */
+        .profile-info {
+            margin-top: 14.3vw;
+            background-color: transparent;
+            text-align: justify;
+            color: black;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+
+            .col-md-8,
+            .profile-info {
+                all: unset;
+                display: contents;
+            }
+        }
+
+        /* 個人描述設置 */
+        .description,
+        .description1 {
+            width: 54vw;
+            height: 6.4vw;
+            font-size: 1.1vw;
+            line-height: 1.6vw;
+            margin-top: -0.5vw;
+            font-weight: 400;
+            color: black;
+        }
+
+        /* 姓名與描述設置 */
+        .name-section {
+            font-size: 5vw;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .name-section {
+                font-size: 6vw;
+                background: linear-gradient(to right, #a16eff, #5a93ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: absolute;
+                left: 43vw;
+                top: 10vw;
+            }
+
+            .description {
+                width: 48vw;
+                font-size: 3.5vw;
+                line-height: unset;
+                position: absolute;
+                left: 43vw;
+                top: 20vw;
+            }
+
+            .description1 {
+                width: 92vw;
+                font-size: 3.5vw;
+                color: black;
+                height: unset;
+                line-height: unset;
+            }
+        }
+
+        /* --------------------畫面上半部設定區塊 END --------------------*/
+        /* --------------------畫面下半部設定區塊 START --------------------*/
+
+        /* 時間軸橫線設置 */
+        .white-bar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .white-bar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 85vw;
+                height: 12.2vw;
+                align-self: center;
+                border-radius: 25.5vw;
+                background-color: white;
+                box-shadow:
+                    0px 10px 44px 0px #6666661F,
+                    /* 外部陰影 */
+                    -5px -3px 12px 0px #C1CBDD29 inset,
+                    /* 內部陰影 1 */
+                    -3px -3px 10px 0px #545C6529 inset;
+                /* 內部陰影 2 */
+                gap: 9.3vw;
+                color: black;
+                z-index: 2;
+            }
+
+            .white-bar div {
+                font-size: 3.5vw;
+                font-weight: 400;
+                border-bottom: 0.8px solid black;
+                width: 8vw;
+                height: 6vw;
+                display: flex;
+                justify-content: center;
+            }
+
+
+
+        }
+
+        .timeline-container .timeline-line {
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            top: 15px;
+            bottom: 25px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.452);
+            border-radius: 50px;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container .timeline-line {
+                left: 5vw;
+                width: 2px;
+            }
+        }
+
+
+
+        /* 祖母綠圓點 */
+        .timeline-dot.emerald {
+            position: relative;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: linear-gradient(135deg, #14dcff, #baf1f5);
+        }
+
+        /* 紫色圓點 */
+        .timeline-dot.purple {
+            position: relative;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: linear-gradient(135deg, #cea2f7, #d3c1dd);
+        }
+
+        /* 時間軸橫線設置 祖母綠橫線 */
+        .timeline-line-horizontal.emerald {
+            position: relative;
+            left: 53%;
+            width: 50px;
+            height: 16px;
+            border-radius: 50px;
+            transform: translate(-50%, -100%);
+            z-index: 2;
+            background: linear-gradient(to left, #11adb3, #baf1f5);
+        }
+
+        @media (max-width: 768px) {
+
+            .timeline-dot.purple,
+            .timeline-dot.emerald {
+                left: 5vw;
+                width: 4vw;
+                height: 4vw;
+            }
+        }
+
+
+
+        /* 時間軸橫線設置 紫色橫線 */
+        .timeline-line-horizontal.purple {
+            position: relative;
+            left: 47%;
+            width: 50px;
+            height: 16px;
+            border-radius: 50px;
+            transform: translate(-50%, -100%);
+            z-index: 2;
+            background: linear-gradient(to right, #73479c, #d3c1dd);
+        }
+
+        @media (max-width: 768px) {
+
+            .timeline-line-horizontal.emerald,
+            .timeline-line-horizontal.purple {
+                left: 15vw;
+                width: 10vw;
+                height: 1vw;
+                transform: translate(-50%, -400%);
+            }
+        }
+
+        /* 查看詳情按鈕 */
+        .see-detail-btn {
+            display: inline-block;
+            padding: 8px 50px;
+            margin-top: 10px;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.5rem;
+            transition: all 0.1s ease;
+        }
+
+        /* 查看詳情按鈕懸停效果 */
+        .see-detail-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* 時間軸日期設置 */
+        .timeline-date {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: -50px;
+        }
+
+        /* 祖母綠日期 */
+        .timeline-date.emerald {
+            /* margin-bottom:-3vw; */
+            font-family: "Arial Black", sans-serif;
+            background: linear-gradient(to bottom, #9ed8ff, #023544);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 紫色日期 */
+        .timeline-date.purple {
+            font-family: "Arial Black", sans-serif;
+            /* 替換為更粗的字體 */
+            background: linear-gradient(to bottom, #c4a1ec, #000000d2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 時間軸容器設置 */
+        .timeline-container {
+            position: relative;
+            margin-bottom: 2vw;
+            padding: 8vw 2.5vw;
+            width: 95%;
+            overflow: hidden;
+            align-self: center;
+            border-radius: 8vw;
+            /* 保持原有的背景設定 */
+            background:
+                radial-gradient(circle at 70% 80%,
+                    rgba(30, 35, 50, 0.85) 50%,
+                    transparent 60%),
+                radial-gradient(circle at 10% 25%,
+                    rgba(42, 82, 100, 0.925) 30%,
+                    transparent 40%),
+                radial-gradient(circle at 70% 10%,
+                    rgb(55, 11, 105),
+                    transparent 70%),
+                radial-gradient(circle at 50% 70%,
+                    rgb(106, 20, 168) 35%,
+                    transparent 50%),
+                radial-gradient(circle at 50% 70%,
+                    rgb(8, 78, 78),
+                    transparent 50%),
+                radial-gradient(circle at 90% 100%,
+                    rgba(92, 152, 187, 0.85) 45%,
+                    transparent 60%),
+                linear-gradient(135deg,
+                    rgb(45, 63, 99),
+                    rgba(49, 4, 82, 1),
+                    rgba(0, 0, 0, 1));
+
+            background-blend-mode: overlay;
+            backdrop-filter: blur(150px);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container {
+                margin-top: -5vw;
+            }
+        }
+
+
+        /* 時間軸項目設置 */
+        .timeline-item {
+            position: relative;
+            width: 100%;
+            margin-bottom: 2.1vw;
+            margin-top: 0.7vw;
+            text-align: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                gap: 3vw;
+            }
+        }
+
+        /* 時間軸左邊內容設置 */
+        .timeline-item.left .timeline-content {
+            font-size: 1.0rem;
+            padding-left: 58%;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item.left .timeline-content {
+                padding-left: 12vw;
+            }
+
+        }
+
+
+
+        /* 時間軸右邊內容設置 */
+        .timeline-item.right .timeline-content {
+            font-size: 1.0rem;
+            padding-right: 58%;
+            text-align: right;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item.right .timeline-content {
+                text-align: left;
+                padding-left: 12vw;
+                padding-right: unset;
+            }
+
+        }
+
+
+        /* 各項目標題設置 */
+        .timeline-title {
+            font-size: 3.3vw;
+            font-weight: 800;
+            margin-bottom: 1.4vw;
+            margin-top: -3vw;
+        }
+
+        /* 各項目文字設置 */
+        .timeline-text {
+            font-size: 1.2vw;
+            line-height: 1.8vw;
+            margin-bottom: 1vw;
+        }
+
+        /* 時間軸年份設置 */
+        .timeline-year {
+            font-size: 3rem;
+            font-weight: bold;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-year {
+                font-size: 8vw;
+            }
+
+            .timeline-title {
+                font-size: 5vw;
+            }
+
+            .timeline-text {
+                font-size: 3.5vw;
+                line-height: 4.2vw;
+                margin-bottom: 4vw;
+            }
+        }
+
+        /* 時間軸左邊文字設置 */
+        .text-left {
+            margin-bottom: -30px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .text-left {
+                text-align: right;
+            }
+        }
+
+        /* 時間軸右邊文字設置 */
+        .text-right {
+            margin-bottom: -30px;
+            text-align: right;
+        }
+
+        /* --------------------畫面下半部設定區塊 END --------------------*/
+
+        /* --------------------畫面右上角設定區塊 START --------------------*/
+
+        /* 固定區塊在畫面右上角 */
+        .region-year-container {
+            position: absolute;
+            top: -1.3vw;
+            /* 整個區塊往上調整 */
+            right: 0.35vw;
+            /* 往右調整 */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: -1;
+        }
+
+        /* 超大字體 + 半透明效果 (年份) */
+        .year-box {
+            font-size: 10vw;
+            font-weight: bold;
+            color: rgba(125, 89, 255, 0.616);
+            -webkit-text-stroke: 2px rgba(125, 89, 255, 0.664);
+            opacity: 0.1;
+            text-transform: uppercase;
+            position: relative;
+            top: -6.8vw;
+            right: 4.3vw;
+        }
+
+        /* 超大字體 + 半透明效果 (地區) */
+        .region-box {
+            font-size: 8vw;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(125, 89, 255, 0.712);
+            opacity: 0.1;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .region-year-container {
+                transform: scale(1.1);
+                top: 1.7vw;
+                right: 3.35vw;
+            }
+        }
+
+        /* --------------------畫面右上角設定區塊 END --------------------*/
+
+        /* --------------------作品、展覽、文章區塊 START --------------------*/
+
+        /* 作品、展覽、文章區塊標題 */
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(to right, #a16eff, #5a93ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 8vw;
+                margin-bottom: 3vw;
+                margin-top: 5vw;
+            }
+        }
+
+        .paintWrapContainer {
+            width: 100%;
+            display: flex;
+            justify-self: center;
+            justify-content: center;
+            align-items: center;
+            /* 讓內部元素垂直置中 */
+            gap: 2.2vw;
+        }
+
+        .paintWrapContainer>img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .paintWrap {
+
+            overflow: hidden;
+            width: 84.5vw;
+            display: flex;
+            gap: 1vw;
+            justify-self: center;
+        }
+
+        .paintItem {
+            flex: 0 0 auto;
+            width: 27.5vw;
+            height: 31.8vw;
+            border-radius: 2vw;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            box-shadow: -5px -3px 12px 0px rgba(193, 203, 221, 0.16) inset,
+                -3px -3px 10px 0px rgba(84, 92, 101, 0.16) inset,
+                0px 5px 44px 0px rgba(169, 168, 168, 0.12) inset;
+        }
+
+
+
+
+        .paintPhoto {
+            width: 25.2vw;
+            height: 20vw;
+            border-radius: 1.4vw;
+            background-color: #F6F7FB;
+            overflow: hidden;
+            /* 隱藏超出容器的部分 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .paintItem {
+                flex: 0 0 auto;
+                width: 59vw;
+                height: 68vw;
+                border-radius: 2vw;
+                gap: 2.4vw;
+            }
+
+            .paintPhoto {
+                width: 54vw;
+                height: 42vw;
+            }
+
+            .paintWrap {
+                overflow: unset;
+                overflow-x: scroll;
+                width: 87vw;
+                display: flex;
+                gap: 5vw;
+            }
+
+            .paintWrapContainer>img {
+                display: none;
+            }
+
+        }
+
+        .paintPhoto img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* 以完整呈現圖片，不拉伸 */
+        }
+
+        .paintName {
+            margin-top: 1.1vw;
+            width: 24vw;
+            height: auto;
+            font-weight: 700;
+            font-size: 1.6vw;
+            color: black;
+        }
+
+        .paintMedium {
+            font-weight: 300;
+            font-size: 1vw;
+            letter-spacing: 1px;
+        }
+
+        .paintDetail {
+            width: 23.5vw;
+            height: 3.7vw;
+            margin-top: 1vw;
+            gap: 0.2vw;
+            font-weight: 400;
+            font-size: 1vw;
+        }
+
+        @media (max-width: 768px) {
+            .paintName {
+                height: 13.5vw;
+                width: 51vw;
+                font-size: 3vw;
+            }
+
+            .paintMedium {
+                font-weight: 300;
+                font-size: 2vw;
+                letter-spacing: 1px;
+            }
+
+            .paintDetail {
+                width: 23.5vw;
+                height: 3.7vw;
+                margin-top: 1vw;
+                gap: 0.2vw;
+                font-weight: 400;
+                font-size: 2vw;
+            }
+        }
+
+        /* Swiper 輪播容器設置 */
+        .swiper {
+            width: 90%;
+            padding-bottom: 40px;
+        }
+
+        /* 卡片基本樣式 */
+        .exhibition-card,
+
+        .exhibition-section {
+            margin-top: 6vw;
+        }
+
+        .article-card {
+            width: 320px;
+            height: 400px;
+            background: white;
+            border-radius: 30px;
+
+            text-align: left;
+            box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-card {
+            width: 320px;
+            height: 400px;
+            box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 卡片懸停效果 */
+        .art-card:hover,
+        .exhibition-card:hover,
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 卡片圖片設置 */
+        .art-image,
+        .exhibition-image,
+        .article-image {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+        /* 卡片內容區塊設置 */
+        .art-info,
+        .exhibition-info,
+        .article-info {
+            padding: 15px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .art-material {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .art-date {
+            padding-bottom: 10px;
+
+        }
+
+        /* 按鈕容器設置 */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        /* 按鈕樣式 */
+        .icon-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 2px solid #00a5cf;
+            background: transparent;
+            border-radius: 30px;
+            color: #00a5cf;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .icon-button:hover {
+            background: rgba(0, 165, 207, 0.1);
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* 相關文章區塊 */
+        .related-articles-section {
+            margin-top: 6vw;
+        }
+
+        .black {
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                gap: 4x;
+            }
+
+            .icon-button {
+                gap: 2px;
+                border-radius: 25vw;
+                padding: 6px 13px;
+            }
+
+
+
+
+        }
+
+        .topLeftBg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .EllipseBlueBg {
+            position: absolute;
+            width: 37vw;
+            left: 0;
+            top: 6vw;
+            z-index: -1;
+            z-index: 1;
+
+        }
+
+        .EllipseManBg {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .EllipseBlueBg {
+                display: none;
+
+            }
+
+            .EllipseManBg {
+                display: block;
+                position: absolute;
+                top: -17vw;
+                left: -18vw;
+                transform: rotate(-14deg);
+            }
+
+            .carousel-container {
+                height: 60vw;
+            }
+
+            .ovalBg {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                right: 0;
+            }
+        }
+
+            /* --------------------作品、展覽、文章區塊 END --------------------*/
+    </style>
+</head>
+
+<body>
+    <img src="../img/topLeftBg.png" class="topLeftBg">
+    <img src="../img/EllipseManBg.png" class="EllipseManBg">
+    <div class="container profile-container">
+        <div class="region-year-container">
+            <span id="region" class="region-box"></span>
+            <span id="year" class="year-box"></span>
+        </div>
+        <div class="row">
+            <!-- Profile Image -->
+            <div class="col-md-4">
+                <img id="profileImage" src="" alt="Profile" class="profile-image">
+            </div>
+            <!-- Profile Info -->
+            <div class="col-md-8">
+                <div class="profile-info">
+
+                    <div class="name-section" id="name"></div>
+
+                    <div class="mt-3">
+                        <div id="description" class="description"></div>
+                        <div id="description1" class="description1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="white-bar">
+            <div>簡歷</div>
+            <div>作品</div>
+            <div>展覽</div>
+            <div>文章</div>
+
+        </div>
+        <div class="timeline-container">
+            <img src="../img/EllipseBlueBg.png" class="EllipseBlueBg">
+            <img src="../img/ovalBg.png" class="ovalBg">
+            <div id="timelineContainer"></div>
+        </div>
+        <div class="features-section">
+            <div class="artwork-section">
+                <!-- 作品區塊 -->
+                <h1 class="section-title">作品</h1>
+                <div class="button-container">
+                    <button class="icon-button">
+                        <img src="../img/token_binance-smart-chain.png" alt="雲端" class="icon">雲端上線
+                    </button>
+                    <button class="icon-button">
+                        <img src="../img/certificate.png" alt="證書" class="icon">智慧證書
+                    </button>
+                </div>
+
+                <div class="paintWrapContainer">
+                    <img src="../img/btn (1).png" id="prevBtn">
+                    <div class="paintWrap">
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="../img/art1.png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                秋分 (2021)
+                                <div class="paintMedium">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :70.0 x 70.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="../img/art1.png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                秋分 (2021)
+                                <div class="paintMedium">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :70.0 x 70.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="../img/art1.png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                秋分 (2021)
+                                <div class="paintMedium">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :70.0 x 70.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="../img/art1.png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                秋分 (2021)
+                                <div class="paintMedium">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :70.0 x 70.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paintItem">
+                            <div class="paintPhoto">
+                                <img src="../img/art1.png" alt="Photo">
+                            </div>
+                            <div class="paintName">
+                                秋分 (2021)
+                                <div class="paintMedium">複合媒材</div>
+                                <div class="paintDetail">
+                                    <span>尺寸 :70.0 x 70.0 cm<br>採證日期 :2024/12/01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../img/btn.png" id="nextBtn">
+                </div>
+
+
+
+
+
+                <!-- 展覽資訊區塊-->
+                <div class="exhibition-section">
+                    <h2 class="section-title">展覽</h2>
+                    <div class="carousel-container black">
+                        <button class="arrow prev"><img src="../img/btn (1).png"></button>
+                        <div class="carousel-wrapper">
+                            <div class="carousel-items">
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="arrow next"><img src="../img/btn.png"></button>
+                    </div>
+
+                </div>
+
+                <!-- 相關文章區塊 -->
+                <div class="related-articles-section">
+                    <h2 class="section-title">相關文章</h2>
+                    <div class="carousel-container black">
+                        <button class="arrow prev"><img src="../img/btn (1).png"></button>
+                        <div class="carousel-wrapper">
+                            <div class="carousel-items">
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="newsPicBox">
+                                        <img class="newsPic" src="../img/exhibition1.png">
+                                    </div>
+                                    <div class="carousel-item-header">
+                                        <span class="news agency">中央通訊社</span>
+                                        <span class="separator">｜</span>
+                                        <span class="news">新聞報導</span>
+                                    </div>
+
+                                    <div class="newsTopic">
+                                        藝術品認證導入區塊鏈 業者交易更安全
+                                    </div>
+                                    <div class="newsC">
+                                        以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="arrow next"><img src="../img/btn.png"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadProfileData() {
+            const data = {
+                userImageUrl: '../img/59A1BC40-1971-4522-95DA-74E24BE8B8B3 1.png',
+                name: '林福全',
+                region: '台灣',
+                year: '1963 -',
+                description: `擁有國立臺灣師範大學美術系藝術學博士學位，現任該校美術系兼任助理教授。他曾在新竹師院（現國立新竹教育大學）及臺北市立大學任教，參與數十次國內外聯展，獲得包括全國版畫展第一名和全國油畫展金牌在內的多項殊榮。目前擔任中華民國跨世紀油畫研究會及臺灣今日畫家協會的理事。`,
+                description1:
+                    '其創作理念是「體察生活，真心體悟」，他認為藝術是人類生命中最真摯且重要的紀錄形式。對他而言，藝術創作不僅是情感的表達，更是個人價值觀、生命經驗、處世態度及審美品味的綜合展現。因此，他將生活中對人事物的細膩觀察與真摯感悟融入作品中，賦予藝術創作深刻的意義。',
+                timeline: [
+                    {
+                        title: '學歷',
+                        descriptionList: [
+                            {
+                                description: '國立臺灣師範大學藝術學博士',
+                                year: ''
+                            }
+                        ],
+                        showDetail: false
+                    },
+                    {
+                        title: '經歷',
+                        descriptionList: [
+                            {
+                                description: '國立臺灣師範大學美術系兼任助理教授<br>臺灣今日畫家協會理事長<br>中華民國油畫協會理事<br>中華民國跨世紀油畫研究會理事',
+                                year: ''
+                            }
+                        ],
+                        showDetail: false
+                    },
+                    {
+                        title: '個展',
+                        descriptionList: [
+                            { description: '吉光片羽林福油畫個展 | 台北絢彩藝術中心', year: '2025' },
+                            { description: '「因為，愛」林福全油畫個展 | 國父紀念館逸仙藝廊', year: '2019' },
+                            { description: '「人間關懷」林福全個展 | 新竹縣文化局美術館', year: '2018' },
+                            { description: '「人間關懷」林福全個展 | 高雄文化中心', year: '2017' },
+                            { description: '行旅中的吉光片羽林福全油畫個展 | 吉林藝廊「𨑨迌」', year: '2017' },
+                            { description: '林福全「人間關懷」油畫個展，師大德群藝廊', year: '2016' }
+                        ],
+                        showDetail: false
+                    },
+                    {
+                        title: '聯展',
+                        descriptionList: [
+                            { description: '天地情懷-自然的意象油畫展 | 新竹縣影藝術中心', year: '2024' },
+                            { description: '亞洲國際美展', year: '2001-2006' },
+                            { description: '臺灣今日畫家協會聯展', year: '2008-2024' },
+                            { description: '台北市藝術家聯展', year: '1999-2024' },
+                            { description: '中華民國跨世紀油畫研究會聯展', year: '1999-2024' }
+                        ],
+                        showDetail: false
+                    },
+                    {
+                        title: '獲獎',
+                        descriptionList: [
+                            { description: '第十屆中華人民共和國全國美展優秀作品獎', year: '2004' },
+                            { description: '第五屆大墩美展油畫第二名', year: '1999' },
+                            { description: '第二十三屆全國油畫展優選', year: '1999' },
+                            { description: '第十三屆南美油畫展成績第二名', year: '1996' },
+                            { description: '第十四屆日展版畫第一名', year: '1995' }
+                        ],
+                        showDetail: true
+                    },
+                    {
+                        title: '出版品',
+                        descriptionList: [
+                            { description: '《破象·像·批判》— 藝術論述與人文社會對話專刊', year: '2013' },
+                            { description: '林福全2001個展創作集', year: '2001' },
+                            { description: '林福全2000年油畫作品集', year: '2000' },
+                            { description: '林福全自選畫集', year: '1998' }
+                        ],
+                        showDetail: false
+                    },
+                    {
+                        title: '典藏',
+                        descriptionList: [
+                            { description: '國立國父紀念館典藏', year: '' },
+                            { description: '臺中市文化局典藏', year: '' },
+                            { description: '文化部花蓮美術館典藏', year: '' },
+                            { description: '高雄市立美術館典藏', year: '' }
+                        ],
+                        showDetail: false
+                    }
+                ]
+            };
+
+            document.getElementById('profileImage').src = data.userImageUrl;
+            document.getElementById('name').textContent = data.name;
+            document.getElementById('region').textContent = data.region;
+            document.getElementById('year').textContent = data.year;
+            document.getElementById('description').innerHTML = data.description.replace(/\n\n/g, '<br><br>');
+            document.getElementById('description1').innerHTML = data.description1.replace(/\n\n/g, '<br><br>');
+
+            const timelineContainer = document.getElementById('timelineContainer');
+            data.timeline.forEach((item, index) => {
+
+                const timelineItem = document.createElement('div');
+                timelineItem.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
+
+                // 生成HTML
+                const descriptionsHtml = item.descriptionList.map(desc => {
+                    return `
+                    <div class="timeline-year timeline-date ${index % 2 === 0 ? 'emerald text-right' : 'purple text-left'}">
+                        ${desc.year ? `<strong>${desc.year}</strong>` : ''}
+                    </div>
+                    <br>
+                    <div class="timeline-text">
+                        ${desc.description}
+                    </div>
+                    `;
+                }).join('');
+
+                let detailButtonHtml = item.showDetail ? `<a href="#" class="see-detail-btn">SEE DETAIL</a>` : '';
+                timelineItem.innerHTML = `
+                    
+                    <div class="timeline-dot ${index % 2 === 0 ? 'emerald' : 'purple'}"></div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-line-horizontal ${index % 2 === 0 ? 'emerald' : 'purple'}"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">${item.title}</div>
+                        ${descriptionsHtml}
+                        ${detailButtonHtml}
+                    </div>
+                `;
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+
+
+
+        function initTimeline() {
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProfileData();
+            initTimeline();
+        });
+
+        // 動態添加作品/展覽/文章
+        document.addEventListener("DOMContentLoaded", function () {
+            // 模擬後端回傳資料
+            const artworkData = [
+                {
+                    title: "小漁村 (2021)",
+                    material: "油畫",
+                    size: "22.5 × 15.5 cm",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art1.png"
+                },
+                {
+                    title: "秋分 (2021)",
+                    material: "複合媒材",
+                    size: "70.0 × 70.0 cm",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art2.png"
+                },
+                {
+                    title: "晨曦 (2021)",
+                    material: "水彩",
+                    size: "50.0 × 40.0 cm",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art3.png"
+                }, {
+                    title: "小漁村 (2021)",
+                    material: "油畫",
+                    size: "22.5 × 15.5 cm",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art1.png"
+                },
+                {
+                    title: "秋分 (2021)",
+                    material: "複合媒材",
+                    size: "70.0 × 70.0 cm",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art2.png"
+                },
+                {
+                    title: "晨曦 (2021)",
+                    material: "水彩",
+                    size: "50.0 × 40.0 cm",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art3.png"
+                }
+            ];
+
+            // 模擬後端回傳「相關文章」資料
+            const relatedArticles = [
+                {
+                    title: "藝術的影響力：解析現代油畫趨勢",
+                    date: "2024/01/15",
+                    imageUrl: "../img/relatedArticles1.png"
+                },
+                {
+                    title: "畫布上的夢想：當代藝術家的創作歷程",
+                    date: "2024/02/10",
+                    imageUrl: "../img/relatedArticles2.png"
+                },
+                {
+                    title: "色彩的魔法：解析水彩藝術的魅力",
+                    date: "2024/03/05",
+                    imageUrl: "../img/relatedArticles3.png"
+                },
+                {
+                    title: "抽象與現實：探索藝術的界限",
+                    date: "2024/03/20",
+                    imageUrl: "../img/relatedArticles1.png"
+                },
+                {
+                    title: "油畫技巧揭秘：如何掌握筆觸與色彩",
+                    date: "2024/04/02",
+                    imageUrl: "../img/relatedArticles2.png"
+                }
+            ];
+
+            // 模擬後端回傳「展覽資訊」資料
+            const exhibitionData = [
+                {
+                    title: "吉光片羽林福油畫個展",
+                    date: "台北 | 2025.02.06- 2025.03.10",
+                    location: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。",
+                    imageUrl: "../img/exhibition1.png"
+                },
+                {
+                    title: "現代藝術展：探索未來",
+                    date: "2024/06/01 - 2024/06/30",
+                    location: "高雄美術館",
+                    imageUrl: "../img/exhibition2.png"
+                },
+                {
+                    title: "抽象與現實：當代藝術的對話",
+                    date: "2024/07/15 - 2024/07/25",
+                    location: "台中藝術中心",
+                    imageUrl: "../img/exhibition3.png"
+                },
+                {
+                    title: "水墨畫國際交流展",
+                    date: "2024/08/05 - 2024/08/20",
+                    location: "國立故宮博物院",
+                    imageUrl: "../img/exhibition4.png"
+                }
+            ];
+
+            // 取得作品
+            const artworkContainer = document.getElementById("artworkContainer");
+            // 取得文章
+            const articleContainer = document.getElementById("articleContainer");
+            // 取得展覽
+            const exhibitionContainer = document.getElementById("exhibitionContainer");
+
+            // 動態生成作品卡片
+            artworkData.forEach((art) => {
+                const artCard = document.createElement("div");
+                artCard.classList.add("swiper-slide", "art-card");
+                artCard.innerHTML = `
+                        <img class="art-image" src="${art.imageUrl}" alt="${art.title}">
+                        <div class="art-info">
+                            <div class="art-title">${art.title}</div>
+                            <div class="art-material">${art.material}</div>
+                            <div class="art-size">尺寸：${art.size}</div>
+                            <div class="art-date">採證日期：${art.date}</div>
+                        </div>
+                    `;
+                artworkContainer.appendChild(artCard);
+            });
+
+
+            // 動態生成文章卡片
+            relatedArticles.forEach((article) => {
+                const articleCard = document.createElement("div");
+                articleCard.classList.add("swiper-slide", "article-card");
+                articleCard.innerHTML = `
+                        <img class="article-image" src="${article.imageUrl}" alt="${article.title}">
+                        <div class="article-info">
+                            <div class="article-title">${article.title}</div>
+                            <div class="article-meta">${article.date}</div>
+                        </div>
+                    `;
+                articleContainer.appendChild(articleCard);
+            });
+
+            // 動態生成展覽卡片
+            exhibitionData.forEach((exhibition) => {
+                const exhibitionCard = document.createElement("div");
+                exhibitionCard.classList.add("swiper-slide", "exhibition-card");
+                exhibitionCard.innerHTML = `
+                        <img class="exhibition-image" src="${exhibition.imageUrl}" alt="${exhibition.title}">
+                        <div class="exhibition-info">
+                            <div class="exhibition-date">${exhibition.date}</div>
+                            <div class="exhibition-title">${exhibition.title}</div>
+                            <div class="exhibition-location">${exhibition.location}</div>
+                        </div>
+                    `;
+                exhibitionContainer.appendChild(exhibitionCard);
+            });
+
+            // 初始化 Swiper
+            new Swiper(".mySwiper", {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                loop: false,
+                breakpoints: {
+                    768: { slidesPerView: 3.5 },
+                    480: { slidesPerView: 1 }
+                }
+            });
+        });
+
+    </script>
+
+    <script src="./workpiece.js"></script>
+    <script src="../homePage/news.js"></script>
+</body>
+
+</html>

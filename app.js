@@ -5,7 +5,7 @@ const connectDB = require('./mongo/db.js');
 const certiRouter = require('./routes/certiRoutes.js');
 const port = process.env.PORT || 3000;
 app.use(express.json());
-app.use(express.static('../frontend'));
+app.use(express.static('public'));
 connectDB()
 
 // ✅ 測試 Heroku 是否讀取 `routes` 資料夾內的檔案

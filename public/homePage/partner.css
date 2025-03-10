@@ -1,0 +1,170 @@
+.partnerBar {
+    width: 86%;
+    height: 88px;
+    gap:3%;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 29px;
+}
+
+@media (max-width: 768px) {
+  .partnerBar{
+    width: 100%;
+    /* height:42.44px; */
+    gap:1%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin-top:3px;
+  }
+}
+
+.partnerBox {
+    width: 222px;
+    height: 88px;
+    display: flex;
+    justify-content: center;
+    /* 水平置中 */
+    align-items: center;
+    /* 垂直置中 */
+    /* 讓容器成為參考點 */
+    position: relative;
+}
+
+.partnerBox img {
+    /* 讓圖片不超出容器，同時保持比例 */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.partnerBox .indicator {
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: #E7EEEC;
+    position: absolute;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .partnerBox {
+        /* width: 107px;
+        height: 42px; */
+        min-width: 73.31px;
+    }
+
+    .partnerBox .indicator {
+        width: 100%;
+        height: 2px;
+    }
+}
+
+.partnerBox.active .indicator {
+    background-color: #005ca2;
+
+}
+
+.partnerContainer {
+    width: 86.1%;
+    height: 312px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    background-color: #f6f7fb;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0 6%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.partnerContent {
+    display: none;
+}
+
+/* 顯示目前 active 的內容 */
+.partnerContent.active {
+    display: flex;
+    gap: 52px;
+    justify-content: center;
+    align-items: center;
+}
+
+.partnerContentL {
+    height: 187px;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    text-align: center;
+}
+
+.partnerContentL-1 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+}
+
+.partnerContentL-2 {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
+
+}
+
+.partnerContentR {
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
+
+}
+
+.partnerHead{
+    margin-top:132px;
+}
+
+@media (max-width: 768px) {
+    .partnerContainer {
+        width: 100%;
+        height: 192px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .partnerContent.active {
+        gap: 24px;
+    }
+
+    .partnerContentL {
+        height: 94px;
+        width: 64px;
+        gap: 18px;
+    }
+    
+    .partnerContentL-1 {
+        font-size: 14px;
+        line-height: 18.2px;
+    }
+    
+    .partnerContentL-2 {
+        font-weight: 300;
+        font-size: 12px;
+        line-height:18px;
+        letter-spacing:0.8px;
+    }
+    
+    .partnerContentR {
+        width: 273px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.8px;
+    }
+
+    .partnerHead{
+        margin-top:56px;
+    }
+}
