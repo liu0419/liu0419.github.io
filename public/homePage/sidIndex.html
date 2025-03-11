@@ -15,13 +15,15 @@
     <link rel="stylesheet" type="text/css" href="partner.css" />
     <link rel="stylesheet" type="text/css" href="certificate.css" />
     <link rel="stylesheet" type="text/css" href="nav.css" />
+    <link rel="stylesheet" type="text/css" href="signup&login.css" />
 
     <style>
         html,
         body {
             width: 100%;
             margin: 0;
-            scroll-behavior: smooth; /* 讓滾動變得平滑 */
+            scroll-behavior: smooth;
+            /* 讓滾動變得平滑 */
         }
     </style>
 </head>
@@ -35,19 +37,41 @@
         </div>
         <div class="navOpt">
             <a href="#proTeam">專業團隊</a>
-            <a >關於藝信</a>
+            <a>關於藝信</a>
             <a href="#news">相關文章</a>
             <a href="#artist">畫家專訪</a>
-            <a >聯絡我們</a>
+            <a>聯絡我們</a>
         </div>
 
-        <div class="navPerson">
+        <div class="navPerson" id="navPersonIcon">
             <img src="../img/lets-icons_user-alt-light.png">
         </div>
         <div class="navHam">
             <img src="../img/ic_round-menu.png">
         </div>
     </nav>
+
+    <!-- 登入/註冊 Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SIGN IN</h2>
+
+            <div class="inputBox">
+                <input type="text" required="" placeholder="Username">
+            </div>
+            <div class="inputBox">
+                <input type="text" required="" placeholder="Password">
+            </div>
+            <div class="links">
+                <a href="#">Forgot Password</a>
+                <a href="#" id="signupLink">Signup</a>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Login">
+            </div>
+        </div>
+    </div>
     <!-- ----------------------------------- 頂部畫 -->
     <div class="P-container">
         <div class="photo-container">
@@ -236,7 +260,7 @@
         <div class="certiBtn" id="certiBtn">查看英文版</div>
     </div>
 
-        <!-- <div class="certiRwd">
+    <!-- <div class="certiRwd">
             <img src="../主要/../img/採證確認書.png">
         </div>   -->
 
@@ -817,6 +841,7 @@
     <script src="./artist.js"></script>
     <script src="./partner.js"></script>
     <script src="./certificate.js"></script>
+    <script src="./signup&login.js"></script>
 
 
 </body>

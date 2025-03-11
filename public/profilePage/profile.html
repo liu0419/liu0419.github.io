@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="news.css" />
     <link rel="stylesheet" type="text/css" href="nav.css" />
     <link rel="stylesheet" type="text/css" href="./news.js" />
+    <link rel="stylesheet" type="text/css" href="./signup&login.css" />
+   
     <style>
         /* 基本頁面設置 */
         :root {
@@ -897,6 +899,28 @@
 </head>
 
 <body>
+     <!-- 登入/註冊 Modal -->
+     <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SIGN IN</h2>
+
+            <div class="inputBox">
+                <input type="text" required="" placeholder="Username">
+            </div>
+            <div class="inputBox">
+                <input type="text" required="" placeholder="Password">
+            </div>
+            <div class="links">
+                <a href="#">Forgot Password</a>
+                <a href="#" id="signupLink">Signup</a>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Login">
+            </div>
+        </div>
+    </div>
+    <!-- ------------------ -->
     <nav class="navbarP">
         <div class="navbarLogo">
             <img src="../img/Container (1).png">
@@ -909,7 +933,7 @@
             <a >聯絡我們</a>
         </div>
 
-        <div class="navPerson">
+        <div class="navPerson" id="navPersonIcon">
             <img src="../img/lets-icons_user-alt-light.png">
         </div>
         <div class="navHam">
@@ -1538,7 +1562,8 @@
     </script>
 
     <script src="./workpiece.js"></script>
-    <script src="../homePage/news.js"></script>
+    <script src="./news.js"></script>
+    <script src="./signup&login.js"></script>
 </body>
 
 </html>
