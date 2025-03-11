@@ -11,8 +11,8 @@ const content = {
   },
   english: {
     img: "../img/Property 1=英文.jpg",
-    title: "Unique Smart Identity",
-    text: "All-in-One: One certificate, complete profile!",
+    title: "獨一無二的智慧身份",
+    text: "多功能整合：一份證書，完整檔案！",
     btnText: "查看中文版"
   }
 };

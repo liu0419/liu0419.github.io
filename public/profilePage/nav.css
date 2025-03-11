@@ -1,4 +1,4 @@
-.navbar {
+.navbarP {
     position: fixed;
     width: 100%;
     /* 固定位置 */
@@ -14,6 +14,7 @@
     z-index: 1000;
     /* 確保導覽列位於其他內容之上 */
     display: flex;
+    color: black;
 }
 
 .navbarLogo {
@@ -82,7 +83,7 @@
 }
 
 @media (max-width: 768px) {
-    .navbar{
+    .navbarP{
         height:11vw;
     }
     .navbarLogo {

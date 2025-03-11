@@ -21,6 +21,7 @@
         body {
             width: 100%;
             margin: 0;
+            scroll-behavior: smooth; /* 讓滾動變得平滑 */
         }
     </style>
 </head>
@@ -33,11 +34,11 @@
             <img src="../img/Container (1).png">
         </div>
         <div class="navOpt">
-            <div>專業團隊</div>
-            <div>關於藝信</div>
-            <div>相關文章</div>
-            <div>畫家專訪</div>
-            <div>聯絡我們</div>
+            <a href="#proTeam">專業團隊</a>
+            <a >關於藝信</a>
+            <a href="#news">相關文章</a>
+            <a href="#artist">畫家專訪</a>
+            <a >聯絡我們</a>
         </div>
 
         <div class="navPerson">
@@ -88,6 +89,7 @@
     <!-- -----------------------------------------block 專業團隊 -->
 
     <div class="block">
+        <div id="proTeam"></div>
         <div class="proTeam">
             專業團隊
         </div>
@@ -306,12 +308,15 @@
                 </div>
             </div>
         </div>
+        <div id="news"></div>
     </div>
 
 
 
 
     <!-- -------------------------------------- News  -->
+    <div id="news"></div>
+
     <div class="topic">最新消息</div>
 
     <div class="carousel-container">
@@ -488,14 +493,13 @@
                         以區塊鏈技術將珠寶、藝術品的特徵數位化收藏及認證，藏逸拍賣會董事長伍穗華表示，這項技術可能影響整個拍賣收藏業界，讓買賣更有信心也更安全。
                     </div>
                 </div>
-
-
             </div>
         </div>
         <button class="arrow next"><img src="../img/btn.png"></button>
     </div>
 
     <!-------------------------------畫家專訪  -->
+    <div id="artist"></div>
     <div class="topic">畫家專訪</div>
 
 

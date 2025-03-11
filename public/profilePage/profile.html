@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="news.css" />
+    <link rel="stylesheet" type="text/css" href="nav.css" />
     <link rel="stylesheet" type="text/css" href="./news.js" />
     <style>
         /* 基本頁面設置 */
@@ -194,11 +195,11 @@
                     -3px -3px 10px 0px #545C6529 inset;
                 /* 內部陰影 2 */
                 gap: 9.3vw;
-                color: black;
+               
                 z-index: 2;
             }
 
-            .white-bar div {
+            .white-bar a {
                 font-size: 3.5vw;
                 font-weight: 400;
                 border-bottom: 0.8px solid black;
@@ -206,6 +207,8 @@
                 height: 6vw;
                 display: flex;
                 justify-content: center;
+                color: black;
+                text-decoration: none;
             }
 
 
@@ -261,11 +264,11 @@
         /* 時間軸橫線設置 祖母綠橫線 */
         .timeline-line-horizontal.emerald {
             position: relative;
-            left: 53%;
-            width: 50px;
-            height: 16px;
+            left: 54%;
+            width:3vw;
+            height:1.1vw;
             border-radius: 50px;
-            transform: translate(-50%, -100%);
+            transform: translate(-50%, -120%);
             z-index: 2;
             background: linear-gradient(to left, #11adb3, #baf1f5);
         }
@@ -285,11 +288,11 @@
         /* 時間軸橫線設置 紫色橫線 */
         .timeline-line-horizontal.purple {
             position: relative;
-            left: 47%;
-            width: 50px;
-            height: 16px;
+            left: 46%;
+            width: 3vw;
+            height: 1.1vw;
             border-radius: 50px;
-            transform: translate(-50%, -100%);
+            transform: translate(-50%, -120%);
             z-index: 2;
             background: linear-gradient(to right, #73479c, #d3c1dd);
         }
@@ -862,6 +865,13 @@
             display: none;
         }
 
+        .ovalBg {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                right: 0;
+            }
+
         @media (max-width: 768px) {
             .EllipseBlueBg {
                 display: none;
@@ -880,12 +890,6 @@
                 height: 60vw;
             }
 
-            .ovalBg {
-                position: absolute;
-                top: 0;
-                height: 100%;
-                right: 0;
-            }
         }
 
             /* --------------------作品、展覽、文章區塊 END --------------------*/
@@ -893,6 +897,25 @@
 </head>
 
 <body>
+    <nav class="navbarP">
+        <div class="navbarLogo">
+            <img src="../img/Container (1).png">
+        </div>
+        <div class="navOpt">
+            <a href="#proTeam">專業團隊</a>
+            <a >關於藝信</a>
+            <a href="#news">相關文章</a>
+            <a href="#artist">畫家專訪</a>
+            <a >聯絡我們</a>
+        </div>
+
+        <div class="navPerson">
+            <img src="../img/lets-icons_user-alt-light.png">
+        </div>
+        <div class="navHam">
+            <img src="../img/ic_round-menu.png">
+        </div>
+    </nav>
     <img src="../img/topLeftBg.png" class="topLeftBg">
     <img src="../img/EllipseManBg.png" class="EllipseManBg">
     <div class="container profile-container">
@@ -920,18 +943,23 @@
         </div>
 
         <!-- Timeline Section -->
+        <div id="profile"></div>
         <div class="white-bar">
-            <div>簡歷</div>
-            <div>作品</div>
-            <div>展覽</div>
-            <div>文章</div>
+            <a href="#profile">簡歷</a>
+            <a href="#creation">作品</a>
+            <a href="#exhibition">展覽</a>
+            <a href="#article">文章</a>
 
         </div>
+       
         <div class="timeline-container">
             <img src="../img/EllipseBlueBg.png" class="EllipseBlueBg">
             <img src="../img/ovalBg.png" class="ovalBg">
             <div id="timelineContainer"></div>
+            <div id="creation"></div>
         </div>
+
+        
         <div class="features-section">
             <div class="artwork-section">
                 <!-- 作品區塊 -->
@@ -1010,13 +1038,15 @@
                         </div>
                     </div>
                     <img src="../img/btn.png" id="nextBtn">
+                    <div id="exhibition"></div>
                 </div>
 
 
 
 
-
+               
                 <!-- 展覽資訊區塊-->
+               
                 <div class="exhibition-section">
                     <h2 class="section-title">展覽</h2>
                     <div class="carousel-container black">
@@ -1100,10 +1130,11 @@
                         </div>
                         <button class="arrow next"><img src="../img/btn.png"></button>
                     </div>
-
+                    <div id="article"></div>
                 </div>
 
                 <!-- 相關文章區塊 -->
+               
                 <div class="related-articles-section">
                     <h2 class="section-title">相關文章</h2>
                     <div class="carousel-container black">
@@ -1242,7 +1273,7 @@
                             { description: '亞洲國際美展', year: '2001-2006' },
                             { description: '臺灣今日畫家協會聯展', year: '2008-2024' },
                             { description: '台北市藝術家聯展', year: '1999-2024' },
-                            { description: '中華民國跨世紀油畫研究會聯展', year: '1999-2024' }
+                            { description: '中華民國跨世紀油畫研究會聯展', year: '1999-2024' },
                         ],
                         showDetail: false
                     },

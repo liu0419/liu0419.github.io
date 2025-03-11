@@ -1,0 +1,11 @@
+
+.gitignore
+
+
+
+backend public(frontend) > .git
+
+
+user > frontend (html css js), aws s3(images)
+user > backend(api)
+admin > frontend & backend
