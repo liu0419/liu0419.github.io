@@ -111,6 +111,7 @@
     .artistN {
         font-size: 5vw;
         line-height:6vw;
+        margin-bottom: auto;
     }
 
     .artistIntro {
