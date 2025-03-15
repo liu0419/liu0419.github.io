@@ -1,50 +1,17 @@
+import { artists } from './artistData.js';
+
 //展覽畫面渲染
 document.addEventListener("DOMContentLoaded", function () {
-    // 模擬後端回傳資料
-    const artworkData = [
-        {
-            title: "小漁村 (2021)",
-            material: "油畫",
-            size: "22.5 × 15.5",
-            date: "2024/12/01",
-            imageUrl: "../img/art1.png"
-        },
-        {
-            title: "秋分 (2021)",
-            material: "複合媒材",
-            size: "70.0 × 70.0",
-            date: "2024/12/01",
-            imageUrl: "../img/art2.png"
-        },
-        {
-            title: "晨曦 (2021)",
-            material: "水彩",
-            size: "50.0 × 40.0",
-            date: "2024/12/01",
-            imageUrl: "../img/art3.png"
-        },
-        {
-            title: "小漁村 (2021)",
-            material: "油畫",
-            size: "22.5 × 15.5",
-            date: "2024/12/01",
-            imageUrl: "../img/art1.png"
-        },
-        {
-            title: "秋分 (2021)",
-            material: "複合媒材",
-            size: "70.0 × 70.0",
-            date: "2024/12/01",
-            imageUrl: "../img/art2.png"
-        },
-        {
-            title: "晨曦 (2021)",
-            material: "水彩",
-            size: "50.0 × 40.0",
-            date: "2024/12/01",
-            imageUrl: "../img/art3.png"
-        }
-    ];
+
+    const artist = artists.find(a => a.name === "張維玲");
+
+    if (!artist) {
+        console.error("找不到該畫家的作品資料");
+        return;
+    }
+
+    const artworkData = artist.artworkData; // 從 `artistData.js` 取得作品資料
+
 
     // 取得作品容器
     const artworkContainer = document.getElementById("artworkContainer");

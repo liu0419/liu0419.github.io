@@ -1,36 +1,14 @@
+import { artists } from './artistData.js';
 document.addEventListener("DOMContentLoaded", function () {
-    // 模擬後端回傳「展覽資訊」資料
-    const exhibitionData = [
-        {
-            title: "吉光片羽林福油畫個展",
-            date: "2025.02.06- 2025.03.10",
-            location: "台北",
-            imageUrl: "../img/exhibition1.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            title: "現代藝術展：探索未來",
-            date: "2024/06/01 - 2024/06/30",
-            location: "高雄美術館",
-            imageUrl: "../img/exhibition2.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
+    // 1. 找到 "林福全" 的展覽資料
+    const artist = artists.find(a => a.name === "林福全");
 
-        },
-        {
-            title: "抽象與現實：當代藝術的對話",
-            date: "2024/07/15 - 2024/07/25",
-            location: "台中藝術中心",
-            imageUrl: "../img/exhibition3.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            title: "水墨畫國際交流展",
-            date: "2024/08/05 - 2024/08/20",
-            location: "國立故宮博物院",
-            imageUrl: "../img/exhibition1.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        }
-    ];
+    if (!artist) {
+        console.error("找不到該畫家的展覽資訊");
+        return;
+    }
+
+    const exhibitionData = artist.exhibitionData; // 取得該畫家的展覽資訊
 
     // 取得作品容器
     const exhibiNews = document.getElementById("exhibiNews");
@@ -84,43 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //相關文章畫面渲染
 document.addEventListener("DOMContentLoaded", function () {
-    const relatedArticles = [
-        {
-            agency:"CNN",
-            title: "藝術的影響力：解析現代油畫趨勢",
-            date: "2024/01/15",
-            imageUrl: "../img/relatedArticles1.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            agency:"公民新聞",
-            title: "畫布上的夢想：當代藝術家的創作歷程",
-            date: "2024/02/10",
-            imageUrl: "../img/relatedArticles2.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            agency:"自由時報",
-            title: "色彩的魔法：解析水彩藝術的魅力",
-            date: "2024/03/05",
-            imageUrl: "../img/relatedArticles3.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            agency:"CNN",
-            title: "抽象與現實：探索藝術的界限",
-            date: "2024/03/20",
-            imageUrl: "../img/relatedArticles1.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        },
-        {
-            agency:"CNN",
-            title: "油畫技巧揭秘：如何掌握筆觸與色彩",
-            date: "2024/04/02",
-            imageUrl: "../img/relatedArticles2.png",
-            newsC: "「吉光片羽」，意指美好的事物稍縱即逝。這與展出的畫作中捕捉到的瞬間光影變幻、自然景致的短暫美感是相呼應的，突出了作品的核心主題和藝術特色，不管作品的具象與否解渴引發觀者對作品中蘊含的詩意與情感的聯想和思考，並促進了更深度的文化與藝術交流，邀請觀眾探索生命的珍貴與美好。"
-        }
-    ];
+    const artist = artists.find(a => a.name === "林福全");
+
+    if (!artist) {
+        console.error("找不到該畫家的相關文章");
+        return;
+    }
+
+    const relatedArticles = artist.relatedArticles; // 取得該畫家的相關文章
+
 
     const relatedNews = document.getElementById("relatedNews");
     // 使用 DocumentFragment 來提高效能

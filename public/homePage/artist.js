@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             artworkData: [
                 { title: "小漁村 (2021)", material: "油畫", size: "22.5 × 15.5", date: "2024/12/01", imageUrl: "../img/art1.png" },
                 { title: "秋分 (2021)", material: "複合媒材", size: "70.0 × 70.0", date: "2024/12/01", imageUrl: "../img/art2.png" },
-                { title: "晨曦 (2021)", material: "水彩", size: "50.0 × 40.0", date: "2024/12/01", imageUrl: "../img/art3.png" }
+                { title: "晨曦 (2021)", material: "水彩", size: "50.0 × 40.0", date: "2024/12/01", imageUrl: "../img/art3.png" },
             ]
         },
         {
@@ -45,6 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     size: "70.0 × 70.0",
                     date: "2024/12/01",
                     imageUrl: "../img/art2.png"
+                },
+                {
+                    title: "晨曦 (2021)",
+                    material: "水彩",
+                    size: "50.0 × 40.0",
+                    date: "2024/12/01",
+                    imageUrl: "../img/art3.png"
                 },
                 {
                     title: "晨曦 (2021)",
