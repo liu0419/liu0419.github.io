@@ -1,7 +1,7 @@
  .block {
     justify-self: center;
      position: relative;
-     width:90%;
+     width:100%;
      /* 最小寬度對應數值 */
      height:auto;
      /* 區塊高度，可自行調整 */

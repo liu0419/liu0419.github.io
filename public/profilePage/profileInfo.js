@@ -2,7 +2,7 @@ import { artists } from './artistData.js';
 
 async function loadProfileData() {
       // 1. 查找 "林福全" 的 `data`
-      const artist = artists.find(a => a.name === "張維玲");
+      const artist = artists.find(a => a.name === "林福全");
 
       if (!artist) {
           console.error("找不到畫家資料");

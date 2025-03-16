@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "龐銚 老師",
             intro: "1973年生於北京，成長於香港與台北，畢業於臺灣藝術專科學校及美國國立芳邦大學藝術創作碩士。來自藝術世家，作品風格以黑白灰金屬色為主調，探索具象與非具象之間的純粹本質。曾獲台灣南瀛獎等多項榮譽，作品被多地典藏，並跨界主持榮獲金鐘獎，展現藝術生活的多元可能。",
             artworkData: [
-                { title: "小漁村 (2021)", material: "油畫", size: "22.5 × 15.5", date: "2024/12/01", imageUrl: "../img/art1.png" },
-                { title: "秋分 (2021)", material: "複合媒材", size: "70.0 × 70.0", date: "2024/12/01", imageUrl: "../img/art2.png" },
+                { title: "秋分 (2021)", material: "複合媒材", size: "70.0 x 70.0 cm", date: "2024/12/01", imageUrl: "../img/art3.png" },
+                { title: "小丘 (2021)", material: "複合媒材", size: "48.0 x 74.0 cm", date: "2024/12/01", imageUrl: "../img/image.png" },
                 { title: "晨曦 (2021)", material: "水彩", size: "50.0 × 40.0", date: "2024/12/01", imageUrl: "../img/art3.png" },
             ]
         },
